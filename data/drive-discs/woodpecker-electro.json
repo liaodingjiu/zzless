@@ -1,0 +1,7 @@
+{
+  "s": "woodpecker-electro",
+  "n": "Woodpecker Electro",
+  "type": "Attack",
+  "p2": "CRIT Rate +8%",
+  "p4": "Landing a crit with Basic Attack, Dodge Counter, or EX Special increases ATK by 9% for 6s (separate timers per skill)."
+}

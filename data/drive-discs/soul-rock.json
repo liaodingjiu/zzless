@@ -1,0 +1,7 @@
+{
+  "s": "soul-rock",
+  "n": "Soul Rock",
+  "type": "Defense",
+  "p2": "DEF +16%",
+  "p4": "Upon taking HP damage, the equipper takes 40% less DMG for 2.5s (once every 15s)."
+}

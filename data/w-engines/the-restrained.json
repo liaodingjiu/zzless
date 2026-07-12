@@ -1,0 +1,11 @@
+{
+  "s": "the-restrained",
+  "n": "The Restrained",
+  "r": "S",
+  "t": "Stun",
+  "a": 684,
+  "sub": "Impact",
+  "sv": "18%",
+  "p": "Restrained Power",
+  "pd": "Hits increase Basic Attack DMG & Daze by 6% per stack, max 5 stacks."
+}

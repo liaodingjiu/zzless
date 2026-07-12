@@ -1,0 +1,15 @@
+{
+  "name": "Yangyang: Xuanling",
+  "slug": "yangyang:-xuanling",
+  "rarity": "5",
+  "attribute": "Havoc",
+  "weapon": "Sword",
+  "cls": "Natural",
+  "description": "==Combat Overview==",
+  "stats": {
+    "hp": 10200,
+    "atk": 250,
+    "def": 1100,
+    "energy": 100
+  }
+}

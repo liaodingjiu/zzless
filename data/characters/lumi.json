@@ -1,0 +1,16 @@
+{
+  "name": "Lumi",
+  "slug": "lumi",
+  "rarity": "4",
+  "attribute": "Electro",
+  "weapon": "Broadblade",
+  "cls": "Congenital",
+  "birthplace": "Huanglong",
+  "description": "She is a navigator at Lollo Logistics and leader of a transport squad team.",
+  "stats": {
+    "hp": 8500,
+    "atk": 338,
+    "def": 880,
+    "energy": 125
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Rover",
+  "slug": "rover",
+  "rarity": "5",
+  "attribute": "Multiple",
+  "weapon": "Sword",
+  "stats": {
+    "hp": 10775,
+    "atk": 438,
+    "def": 1136,
+    "energy": 125
+  }
+}

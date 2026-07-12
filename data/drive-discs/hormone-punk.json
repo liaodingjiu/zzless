@@ -1,0 +1,7 @@
+{
+  "s": "hormone-punk",
+  "n": "Hormone Punk",
+  "type": "Attack",
+  "p2": "ATK +10%",
+  "p4": "Upon entering combat or switching in, ATK increases by 25% for 10s (once every 20s)."
+}

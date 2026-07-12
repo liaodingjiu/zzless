@@ -1,0 +1,11 @@
+{
+  "s": "cordis-germina",
+  "n": "Cordis Germina",
+  "r": "S",
+  "t": "Attack",
+  "a": 713,
+  "sub": "CRIT Rate",
+  "sv": "24%",
+  "p": "Electric Bloom",
+  "pd": "+15% CRIT Rate. Basic/EX Special stacks boost Electric DMG 12.5% (2 stacks). At full stacks, Basic & Ultimate ignore 20% DEF."
+}

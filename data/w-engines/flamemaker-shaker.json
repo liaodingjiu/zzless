@@ -1,0 +1,11 @@
+{
+  "s": "flamemaker-shaker",
+  "n": "Flamemaker Shaker",
+  "r": "S",
+  "t": "Anomaly",
+  "a": 713,
+  "sub": "ATK",
+  "sv": "30%",
+  "p": "Shake It Up",
+  "pd": "Off-field Energy Regen +0.6/s. EX Special/Assist hits grant +3.5% DMG per stack (max 10). At 5+ stacks: +50 Anomaly Proficiency."
+}

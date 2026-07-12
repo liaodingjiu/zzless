@@ -1,0 +1,17 @@
+{
+  "name": "Lingyang",
+  "slug": "lingyang",
+  "rarity": "5",
+  "attribute": "Glacio",
+  "weapon": "Gauntlets",
+  "cls": "Natural",
+  "birthday": "August 8th",
+  "birthplace": "Huanglong",
+  "description": "He is a member of the  Troupe in Jinzhou and the last living Suan'ni.",
+  "stats": {
+    "hp": 10388,
+    "atk": 438,
+    "def": 1210,
+    "energy": 125
+  }
+}

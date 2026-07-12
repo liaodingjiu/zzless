@@ -1,0 +1,15 @@
+{
+  "name": "Jianxin",
+  "slug": "jianxin",
+  "rarity": "5",
+  "attribute": "Aero",
+  "weapon": "Gauntlets",
+  "cls": "Natural",
+  "description": "As a  monk and successor to the art of  she has dedicated her life to mastering the ultimate martial art.",
+  "stats": {
+    "hp": 14113,
+    "atk": 338,
+    "def": 1124,
+    "energy": 150
+  }
+}

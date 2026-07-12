@@ -1,0 +1,7 @@
+{
+  "s": "shadow-harmony",
+  "n": "Shadow Harmony",
+  "type": "Attack",
+  "p2": "Aftershock & Dash Attack DMG +15%",
+  "p4": "Hitting with Aftershock/Dash Attack (matching attribute) grants ATK +4% & CRIT Rate +4%, up to 3 stacks for 15s."
+}

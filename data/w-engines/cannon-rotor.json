@@ -1,0 +1,11 @@
+{
+  "s": "cannon-rotor",
+  "n": "Cannon Rotor",
+  "r": "A",
+  "t": "Attack",
+  "a": 594,
+  "sub": "CRIT Rate",
+  "sv": "20%",
+  "p": "Cannon Fire",
+  "pd": "+7.5% ATK. CRIT hits deal extra 200% ATK as DMG (6s CD)."
+}

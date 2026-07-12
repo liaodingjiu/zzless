@@ -1,0 +1,11 @@
+{
+  "s": "steel-cushion",
+  "n": "Steel Cushion",
+  "r": "S",
+  "t": "Attack",
+  "a": 684,
+  "sub": "CRIT Rate",
+  "sv": "24%",
+  "p": "Backstab",
+  "pd": "+20% Physical DMG. +25% DMG when attacking from behind."
+}

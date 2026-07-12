@@ -1,0 +1,11 @@
+{
+  "s": "hellfire-gears",
+  "n": "Hellfire Gears",
+  "r": "S",
+  "t": "Stun",
+  "a": 684,
+  "sub": "Impact",
+  "sv": "18%",
+  "p": "Off-field Regen",
+  "pd": "Off-field Energy Regen +0.6/s. EX Special: +10% Impact, stacks 2x."
+}

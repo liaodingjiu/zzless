@@ -1,0 +1,11 @@
+{
+  "s": "spectral-gaze",
+  "n": "Spectral Gaze",
+  "r": "S",
+  "t": "Stun",
+  "a": 713,
+  "sub": "CRIT Rate",
+  "sv": "24%",
+  "p": "Electric Gaze",
+  "pd": "Aftershock Electric DMG reduces target DEF by 25%. Off-field stacks boost Impact +4% (max 3, bonus +8% at full)."
+}

@@ -1,0 +1,11 @@
+{
+  "s": "bunny-band",
+  "n": "Bunny Band",
+  "r": "A",
+  "t": "Defense",
+  "a": 594,
+  "sub": "DEF",
+  "sv": "40%",
+  "p": "Bunny Shield",
+  "pd": "+8% Max HP. +10% ATK when shielded."
+}

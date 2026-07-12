@@ -1,0 +1,11 @@
+{
+  "s": "zanshin-herb-case",
+  "n": "Zanshin Herb Case",
+  "r": "S",
+  "t": "Attack",
+  "a": 713,
+  "sub": "CRIT DMG",
+  "sv": "48%",
+  "p": "Lightning Reflex",
+  "pd": "+10% CRIT Rate. Dash Attack Electric DMG +40%. Attribute Anomaly/Stun triggers extra +10% CRIT Rate."
+}

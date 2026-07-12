@@ -1,0 +1,11 @@
+{
+  "s": "deep-sea-visitor",
+  "n": "Deep Sea Visitor",
+  "r": "S",
+  "t": "Attack",
+  "a": 713,
+  "sub": "CRIT Rate",
+  "sv": "24%",
+  "p": "Abyssal Frost",
+  "pd": "+25% Ice DMG. Basic Attack hits give +10% CRIT Rate. Dash Attack Ice DMG gives another +10% CRIT Rate."
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Lucy",
+  "slug": "lucy",
+  "rarity": "5",
+  "attribute": "Spectro",
+  "weapon": "Pistols",
+  "cls": "Mutant",
+  "birthday": "|birthplace       = Unknown",
+  "birthplace": "Unknown",
+  "description": "She is a part of the collaboration with .",
+  "stats": {
+    "hp": 11025,
+    "atk": 425,
+    "def": 1149,
+    "energy": 150
+  }
+}

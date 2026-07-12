@@ -1,0 +1,11 @@
+{
+  "s": "ice-jade-teapot",
+  "n": "Ice-Jade Teapot",
+  "r": "S",
+  "t": "Stun",
+  "a": 713,
+  "sub": "Impact",
+  "sv": "18%",
+  "p": "Tea-riffic",
+  "pd": "Basic Attack hits grant stacks (+0.7% Impact each, max 30). At 15+ stacks: squad DMG +20%."
+}

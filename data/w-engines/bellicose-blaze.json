@@ -1,0 +1,11 @@
+{
+  "s": "bellicose-blaze",
+  "n": "Bellicose Blaze",
+  "r": "S",
+  "t": "Attack",
+  "a": 713,
+  "sub": "Energy Regen",
+  "sv": "60%",
+  "p": "Blazing Fury",
+  "pd": "+20% CRIT Rate. Aftershock Fire DMG ignores 15% DEF, stacks 2x."
+}

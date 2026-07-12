@@ -1,0 +1,11 @@
+{
+  "s": "flight-of-fancy",
+  "n": "Flight of Fancy",
+  "r": "S",
+  "t": "Anomaly",
+  "a": 713,
+  "sub": "Anomaly Proficiency",
+  "sv": "90",
+  "p": "Ethereal Flight",
+  "pd": "+40% Anomaly Buildup Rate. Ether DMG gives +20 Anomaly Proficiency per stack (max 6)."
+}

@@ -1,0 +1,11 @@
+{
+  "s": "big-cylinder",
+  "n": "Big Cylinder",
+  "r": "A",
+  "t": "Defense",
+  "a": 624,
+  "sub": "DEF",
+  "sv": "40%",
+  "p": "Cylinder Guard",
+  "pd": "-7.5% DMG taken. When hit, next attack crits for 600% DEF as DMG."
+}

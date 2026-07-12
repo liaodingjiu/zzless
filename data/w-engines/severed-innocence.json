@@ -1,0 +1,11 @@
+{
+  "s": "severed-innocence",
+  "n": "Severed Innocence",
+  "r": "S",
+  "t": "Attack",
+  "a": 713,
+  "sub": "CRIT DMG",
+  "sv": "48%",
+  "p": "Thunder Edge",
+  "pd": "+30% CRIT DMG. Hits grant stacks (up to 3) for +10% CRIT DMG each. At 3 stacks: +20% Electric DMG."
+}

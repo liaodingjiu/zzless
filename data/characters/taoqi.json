@@ -1,0 +1,15 @@
+{
+  "name": "Taoqi",
+  "slug": "taoqi",
+  "rarity": "4",
+  "attribute": "Havoc",
+  "weapon": "Broadblade",
+  "cls": "Natural",
+  "description": "She is the director of border defense at the Ministry of Development.",
+  "stats": {
+    "hp": 8950,
+    "atk": 225,
+    "def": 1564,
+    "energy": 125
+  }
+}

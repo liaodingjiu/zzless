@@ -1,0 +1,11 @@
+{
+  "s": "riot-suppressor-vi",
+  "n": "Riot Suppressor Mark VI",
+  "r": "S",
+  "t": "Attack",
+  "a": 713,
+  "sub": "CRIT DMG",
+  "sv": "48%",
+  "p": "Ether Authority",
+  "pd": "+15% CRIT Rate. EX Special grants 8 Charge stacks; Basic Attack Ether DMG consumes stacks for +35% DMG each."
+}

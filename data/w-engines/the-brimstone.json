@@ -1,0 +1,11 @@
+{
+  "s": "the-brimstone",
+  "n": "The Brimstone",
+  "r": "S",
+  "t": "Attack",
+  "a": 684,
+  "sub": "ATK",
+  "sv": "30%",
+  "p": "Relentless",
+  "pd": "Basic/Dash/Dodge Counter hits give +3.5% ATK per stack, up to 8 stacks (8s duration)."
+}

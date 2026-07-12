@@ -1,0 +1,7 @@
+{
+  "s": "fanged-metal",
+  "n": "Fanged Metal",
+  "type": "Physical",
+  "p2": "Physical DMG +10%",
+  "p4": "Whenever a squad member inflicts Assault, the equipper deals 35% increased DMG to the target for 12s."
+}

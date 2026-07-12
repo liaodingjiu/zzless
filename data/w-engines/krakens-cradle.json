@@ -1,0 +1,11 @@
+{
+  "s": "krakens-cradle",
+  "n": "Kraken's Cradle",
+  "r": "S",
+  "t": "Rupture",
+  "a": 713,
+  "sub": "HP",
+  "sv": "30%",
+  "p": "Abyssal Rupture",
+  "pd": "HP loss: Ice Sheer DMG +6% (3 stacks). HP ≤50%: +20% CRIT Rate."
+}
