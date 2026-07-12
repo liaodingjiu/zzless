@@ -1,13 +1,291 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>ZZZ W-Engines — All Weapons List | ZZZ Database</title><meta name="description" content="All Zenless Zone Zero W-Engines with base ATK, advanced stats, and passive effects. Filter by type and rarity."><meta name="robots" content="index,follow"><link rel="canonical" href="https://zzless.com/w-engines/"><meta property="og:title" content="ZZZ W-Engines List"><meta property="og:description" content="46 W-Engines with stats and effects."><meta property="og:type" content="website"><meta property="og:url" content="https://zzless.com/w-engines/"><link rel="stylesheet" href="/shared.css"><style>.we-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-height:600px;overflow-y:auto;border:1px solid rgba(134,168,231,0.15);border-radius:12px;padding:12px;background:rgba(134,168,231,0.02)}.we-card{background:var(--surface);border:1px solid rgba(134,168,231,0.2);border-radius:12px;padding:21px 12px 15px;text-align:center;transition:all .22s ease;cursor:pointer;text-decoration:none;color:var(--text);display:flex;flex-direction:column;align-items:center;position:relative}.we-card:hover{border-color:rgba(134,168,231,0.7);transform:translateY(-2px)}.we-card .we-r{position:absolute;top:8px;right:8px;font-size:10px;padding:1px 6px;border-radius:4px;font-weight:700}.we-card .we-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:8px;border:2px solid rgba(134,168,231,0.2)}.we-card .we-name{font-size:16px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}.we-card .we-type{font-size:13px;color:#556677;margin-top:2px}.we-card .we-atk{font-size:18px;font-weight:700;color:#86a8e7;margin-top:4px}.we-card .we-sub{font-size:13px;color:#8899aa;margin-top:2px}.r-s{background:rgba(249,211,102,0.2);color:#F9D366}.r-a{background:rgba(192,132,252,0.2);color:#c084fc}.we-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0}.we-bar input{flex:1;min-width:160px;max-width:320px;padding:8px 14px;border:1px solid rgba(134,168,231,0.3);border-radius:12px;background:var(--surface);color:#fff;font-size:15px}.we-bar input:focus{outline:none;border-color:#86a8e7}.we-bar select{padding:8px 12px;border:1px solid rgba(134,168,231,0.3);border-radius:12px;background:var(--surface);color:#fff;font-size:14px}.we-bar .we-count{font-size:14px;color:#8899aa;white-space:nowrap}.we-hero{text-align:center;padding:24px 0 8px}.we-hero h1{font-size:32px;font-weight:600}.we-hero h1 span{color:#F9D366}.we-hero .we-sub{font-size:15px;color:#8899aa}@media(max-width:1200px){.we-grid{grid-template-columns:repeat(4,1fr)}}@media(max-width:768px){.we-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:480px){.we-grid{grid-template-columns:repeat(2,1fr)}}</style><script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xl629udfvo");</script></head><body>
-<nav aria-label="Main navigation"><div class="nav-inner"><a href="/" class="logo">ZZZ<span>DB</span></a><button class="hamburger" id="hb" aria-label="Menu">☰</button><div class="nav-right"><ul class="nav-links" id="nl"><li><a href="/tier-list/">Tier List</a></li><li><a href="/agents/">Agents</a></li><li><a href="/w-engines/">W-Engines</a></li><li><a href="/drive-discs/">Drive Discs</a></li><li><a href="/bangboo/">Bangboo</a></li><li><a href="/build-planner/" class="nav-highlight">Builder</a></li><li><a href="/codes/">Codes</a></li><li><a href="/items/">Items</a></li></ul><button class="theme-toggle">EN ▾</button></div></div></nav>
-<main class="container" style="max-width:1500px"><header class="we-hero"><h1>Zenless Zone Zero <span>W-Engines</span></h1><p class="we-sub">46 W-Engines with base ATK, advanced stats, and passive effects.</p></header>
-<div class="we-bar"><input type="text" id="s" placeholder="Search W-Engines..." autocomplete="off"><span class="we-count" id="c">46/46</span><select id="rank"><option value="all">All Ranks</option><option value="S">S-Rank</option><option value="A">A-Rank</option></select><select id="type"><option value="all">All Types</option><option>Attack</option><option>Stun</option><option>Anomaly</option><option>Support</option><option>Defense</option><option>Rupture</option></select></div>
-<div class="we-grid" id="g"></div></main>
-<footer class="site-footer"><div class="footer-inner"><p>&copy; 2026 ZZZ Database. Not affiliated with HoYoverse.</p><div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div></div></footer>
-<script src="/w-engines/wengines-data.js"></script><script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>ZZZ W-Engines — All 46 Weapons List | ZZZ Database</title>
+<meta name="description" content="Complete W-Engine database for Zenless Zone Zero — 46 weapons with base ATK, advanced stats, passive effects, and specialty matching guide.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zzless.com/w-engines/">
+<meta property="og:title" content="ZZZ W-Engines List"><meta property="og:description" content="46 W-Engines with stats, effects, and build recommendations.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://zzless.com/w-engines/">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.we-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-height:600px;overflow-y:auto;border:1px solid rgba(134,168,231,0.15);border-radius:12px;padding:12px;background:rgba(134,168,231,0.02)}
+.we-card{background:var(--surface);border:1px solid rgba(134,168,231,0.2);border-radius:12px;padding:21px 12px 15px;text-align:center;transition:all .22s ease;cursor:pointer;text-decoration:none;color:var(--text);display:flex;flex-direction:column;align-items:center;position:relative}
+.we-card:hover{border-color:rgba(134,168,231,0.7);transform:translateY(-2px)}
+.we-card .we-r{position:absolute;top:8px;right:8px;font-size:10px;padding:1px 6px;border-radius:4px;font-weight:700}
+.we-card .we-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:8px;border:2px solid rgba(134,168,231,0.2)}
+.we-card .we-name{font-size:16px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.we-card .we-type{font-size:13px;color:#556677;margin-top:2px}
+.we-card .we-atk{font-size:18px;font-weight:700;color:#86a8e7;margin-top:4px}
+.we-card .we-sub{font-size:13px;color:#8899aa;margin-top:2px}
+.r-s{background:rgba(249,211,102,0.2);color:#F9D366}.r-a{background:rgba(192,132,252,0.2);color:#c084fc}
+.we-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0}
+.we-bar input{flex:1;min-width:160px;max-width:320px;padding:8px 14px;border:1px solid rgba(134,168,231,0.3);border-radius:12px;background:var(--surface);color:#fff;font-size:15px}
+.we-bar input:focus{outline:none;border-color:#86a8e7}
+.we-bar select{padding:8px 12px;border:1px solid rgba(134,168,231,0.3);border-radius:12px;background:var(--surface);color:#fff;font-size:14px}
+.we-bar .we-count{font-size:14px;color:#8899aa;white-space:nowrap}
+.we-hero{text-align:center;padding:24px 0 8px}.we-hero h1{font-size:32px;font-weight:600}.we-hero h1 span{color:#F9D366}.we-hero .we-sub{font-size:15px;color:#8899aa}
+
+.meta-box{margin:20px 0;padding:22px;background:var(--surface);border:1px solid rgba(249,211,102,0.25);border-radius:12px}
+.meta-box h2{font-size:18px;font-weight:600;color:#F9D366;margin-bottom:10px}
+.meta-box p{font-size:14px;color:#8899aa;line-height:1.8;margin-bottom:6px}
+
+.we-faq{margin-top:36px}.we-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}@media(max-width:600px){.we-faq-grid{grid-template-columns:1fr}}
+.we-faq h2{font-size:20px;font-weight:600;color:#F9D366;margin-bottom:6px}
+.we-faq .faq-subtitle{font-size:14px;color:#8899aa;margin-bottom:16px}
+.we-faq-card{background:var(--surface);border:1px solid rgba(134,168,231,0.2);border-radius:12px;padding:20px}
+.we-faq-card h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;padding-left:12px;border-left:3px solid var(--accent)}
+.we-faq-card .faq-a{font-size:14px;color:#8899aa;line-height:1.8;padding-left:15px}
+.we-faq-card .faq-a a{color:#86a8e7;text-decoration:none}.we-faq-card .faq-a a:hover{text-decoration:underline}
+.we-faq-card .faq-a strong{color:#ccc}.we-faq-card .faq-a ul{padding-left:18px;margin:6px 0}.we-faq-card .faq-a ul li{margin-bottom:4px}
+
+@media(max-width:1200px){.we-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:768px){.we-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.we-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xl629udfvo");</script>
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="logo">ZZZ<span>DB</span></a>
+    <button class="hamburger" id="hb" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <ul class="nav-links" id="nl">
+        <li><a href="/tier-list/">Tier List</a></li>
+        <li><a href="/agents/">Agents</a></li>
+        <li><a href="/w-engines/">W-Engines</a></li>
+        <li><a href="/drive-discs/">Drive Discs</a></li>
+        <li><a href="/bangboo/">Bangboo</a></li>
+        <li><a href="/build-planner/" class="nav-highlight">Builder</a></li>
+        <li><a href="/codes/">Codes</a></li>
+        <li><a href="/items/">Items</a></li>
+      </ul>
+      <button class="theme-toggle">EN ▾</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container" style="max-width:1500px">
+
+<header class="we-hero">
+  <h1>Zenless Zone Zero <span>W-Engines</span></h1>
+  <p class="we-sub">46 W-Engines with base ATK, advanced stats, and passive effects &mdash; filter by type and rarity.</p>
+</header>
+
+<!-- Meta Overview -->
+<div class="meta-box" style="max-width:1100px;margin-left:auto;margin-right:auto">
+  <h2>🔧 W-Engines at a Glance</h2>
+  <p>A W-Engine is an agent's <strong>primary weapon</strong> — it provides base ATK, a secondary stat (CRIT Rate, ATK%, Impact, etc.), and a <strong>Passive Effect</strong> that only activates when the agent's Specialty matches the W-Engine's type. Equip an Attack W-Engine on an Attack agent to unlock its full power.</p>
+  <p>There are 4 rarities: <strong>S, A, B, and C</strong>. S-rank W-Engines have higher base ATK (~713 vs ~594) and stronger passives, but A-rank options are competitive — a refined (R5) A-rank W-Engine often matches or beats an unrefined (R1) S-rank. The 46 listed below cover every Specialty, so there is always a matching weapon for your agent.</p>
+</div>
+
+<!-- Ad Slot: Top Leaderboard -->
+<div class="ad-slot ad-slot-top" style="max-width:1100px;margin-left:auto;margin-right:auto">
+  <span class="ad-placeholder">Ad placeholder &mdash; replace with AdSense code</span>
+</div>
+
+<!-- Search & Filters -->
+<div class="we-bar">
+  <input type="text" id="s" placeholder="Search W-Engines by name..." autocomplete="off">
+  <span class="we-count" id="c">46/46</span>
+  <select id="rank"><option value="all">All Ranks</option><option value="S">S-Rank</option><option value="A">A-Rank</option></select>
+  <select id="type"><option value="all">All Types</option><option>Attack</option><option>Stun</option><option>Anomaly</option><option>Support</option><option>Defense</option><option>Rupture</option></select>
+</div>
+
+<!-- W-Engine Grid -->
+<div class="we-grid" id="g"></div>
+
+<!-- Ad Slot: Mid-Content Rectangle -->
+<div class="ad-slot ad-slot-inline" style="max-width:1100px;margin-left:auto;margin-right:auto">
+  <span class="ad-placeholder">Ad placeholder &mdash; replace with AdSense code</span>
+</div>
+
+<!-- Q&A Section -->
+<section class="we-faq"><div class="we-faq-grid" style="max-width:1100px;margin-left:auto;margin-right:auto">
+  <h2>❓ W-Engines FAQ</h2>
+  <p class="faq-subtitle">How W-Engines work, when to pull for them, and how to pick the right one for your agent.</p>
+
+  <div class="we-faq-card">
+    <h3>What does a W-Engine actually do?</h3>
+    <div class="faq-a">
+      <p>A W-Engine provides three things. Understanding all three is the difference between a well-built agent and a random one:</p>
+      <ul>
+        <li><strong>Base ATK</strong> — The flat attack value added to your agent's stats. S-rank W-Engines cap at ~713 ATK, A-ranks at ~624, and the gap is meaningful. But base ATK alone does not make an S-rank worth pulling — you need the full package.</li>
+        <li><strong>Advanced Stat</strong> — A secondary stat that scales with level: CRIT Rate, CRIT DMG, ATK%, Energy Regen, Impact, DEF%, HP%, Anomaly Proficiency, or PEN Ratio. This is often more important than the base ATK because it determines your agent's final stat thresholds.</li>
+        <li><strong>Passive Effect</strong> — A unique ability that activates <strong>only when the agent's Specialty matches the W-Engine's type</strong>. This is the make-or-break feature. An S-rank Attack W-Engine on an Anomaly agent provides only raw stats — no passive, no synergy. Matching type is non-negotiable.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="we-faq-card">
+    <h3>Should I pull limited W-Engines or use A-rank alternatives?</h3>
+    <div class="faq-a">
+      <p>For free-to-play and low-spend players, <strong>A-rank W-Engines are usually good enough</strong>. Here is the honest comparison:</p>
+      <ul>
+        <li><strong>A-rank at R5 (5 copies) ≈ S-rank at R1 (1 copy)</strong> in practical performance. The stat gap narrows with refinements. Since you naturally accumulate A-rank W-Engine copies from pulling on character banners, you will eventually R5 the good ones without trying.</li>
+        <li><strong>Limited W-Engines cost up to ~20,000 Polychrome</strong> (soft pity ~65 pulls). That is basically an entire character. Ask yourself: would you rather have a 10% stat increase on one agent, or an entirely new agent for your second team? Unless you spend money, the answer is almost always "the new agent."</li>
+        <li><strong>Exceptions exist.</strong> Some agents have their signature W-Engine so perfectly tuned that the gap is real. But these are the exception, not the rule. Most agents perform within 5-10% of their signature with a matching R5 A-rank alternative.</li>
+      </ul>
+      <p>Battle Pass W-Engines (R1 at BP Lv.30) are a strong middle ground — $10 gets you a stat-competitive option without burning Polychrome.</p>
+    </div>
+  </div>
+
+  <div class="we-faq-card">
+    <h3>How do I match a W-Engine to my agent?</h3>
+    <div class="faq-a">
+      <p>The matching rule is simple but the prioritization matters:</p>
+      <ul>
+        <li><strong>Step 1 — Match Specialty.</strong> If your agent is Attack, use an Attack W-Engine. This unlocks the passive effect. Any other type means you are leaving damage on the table. This is non-negotiable for carries; Supports can occasionally flex.</li>
+        <li><strong>Step 2 — Check the Advanced Stat.</strong> Does your agent scale with CRIT Rate, ATK%, or something else? An Anomaly agent wants Anomaly Proficiency or ATK%, not CRIT Rate. An agent with a CRIT Rate passive wants a CRIT W-Engine to hit their threshold. Pick the W-Engine whose substat aligns.</li>
+        <li><strong>Step 3 — Read the Passive.</strong> Some passives are generic ("increases ATK by X%"), some require specific team conditions ("when an ally uses EX Special, gain Y% DMG"). Make sure the passive condition is something your team can actually trigger consistently.</li>
+        <li><strong>Step 4 — When in doubt, use the Build Planner.</strong> Open our <a href="/build-planner/">Build Planner</a>, select your agent, and compare W-Engine options side by side to see exact stat differences.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="we-faq-card">
+    <h3>Is the Battle Pass W-Engine worth buying?</h3>
+    <div class="faq-a">
+      <p>The $10 Battle Pass gives you a choice of one R1 A-rank W-Engine at BP Lv.30. Here is the verdict per type:</p>
+      <ul>
+        <li><strong>Attack (Cannon Rotor) — Yes.</strong> CRIT Rate substat with an ATK-boosting passive. Competitive with many S-rank options at R1 and only gets better with refinements. If you are a light spender, this is the best $10 you can spend on gear.</li>
+        <li><strong>Stun (Demara Battery II) — Situational.</strong> Impact substat is correct, but the passive only triggers on Chain Attacks. If your team comp uses frequent Chain Attacks (Stun-heavy teams), it is solid. If not, the craftable alternatives are comparable.</li>
+        <li><strong>Anomaly (Electro-Lip Gloss) — Good.</strong> Anomaly Proficiency substat is exactly what Anomaly agents want. The passive boosts EX Special damage, which Anomaly agents use frequently. Worth it if you main an Anomaly team.</li>
+        <li><strong>Support/Defense/Rupture — Skip.</strong> The BP options for these types are outclassed by easily obtainable alternatives. Save your BP choice for Attack or Anomaly.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="we-faq-card">
+    <h3>What is the real difference between S-rank and A-rank W-Engines?</h3>
+    <div class="faq-a">
+      <p>The numbers tell the story. At Lv.60:</p>
+      <ul>
+        <li><strong>Base ATK:</strong> S-rank ~713 vs A-rank ~594-624. That is roughly a <strong>15-20% ATK gap</strong>. Significant, but an R5 A-rank closes about half of this through its stronger passive multiplier.</li>
+        <li><strong>Advanced Stat:</strong> S-rank CRIT Rate caps at 24%, A-rank at 20%. The 4% difference is about 2-3 substat rolls on Drive Discs — farmable. For Anomaly Proficiency, S-rank is 90 vs A-rank 75. Again: farmable.</li>
+        <li><strong>Passive Effect:</strong> This is where S-ranks pull ahead. Limited S-rank passives are often designed as the "complete" version of an agent's kit — the agent feels fully enabled with it. A-rank passives are more generic and only reach comparable numbers at R5.</li>
+      </ul>
+      <p><strong>Bottom line:</strong> An S-rank W-Engine is a luxury upgrade, not a requirement. Max your agent's level, skills, and discs first — the W-Engine is the last thing to optimize. A properly geared agent with an A-rank W-Engine will clear all content.</p>
+    </div>
+  </div>
+
+  <div class="we-faq-card">
+    <h3>Can I use a W-Engine on an agent with a different Specialty?</h3>
+    <div class="faq-a">
+      <p><strong>You can equip it, but you should not.</strong> The W-Engine system is designed to punish type mismatches:</p>
+      <ul>
+        <li>The <strong>base ATK and advanced stat</strong> still apply — you do get something. An S-rank Attack W-Engine on an Anomaly agent still gives 713 ATK. So in an emergency, it is not completely useless.</li>
+        <li>But the <strong>passive effect is completely disabled</strong> if the Specialty does not match. An S-rank W-Engine without its passive is just an expensive stat stick — often worse than an on-type A-rank with an active passive.</li>
+        <li><strong>The only exception:</strong> Some Supports can flex. If your Support agent only needs the substat (e.g., Energy Regen) and does not care about the passive, an off-type W-Engine with the right substat is occasionally viable. But this is an advanced optimization, not a general rule.</li>
+      </ul>
+      <p>Filter by Type above to see only W-Engines that match your agent's Specialty. Click a W-Engine card to see its full passive description.</p>
+    </div>
+  </div>
+
+  <div class="we-faq-card">
+    <h3>Which W-Engines are worth getting copies of (refining)?</h3>
+    <div class="faq-a">
+      <p>Refinement (superimposing duplicate copies) increases the passive effect's multiplier. Not all W-Engines benefit equally:</p>
+      <ul>
+        <li><strong>High value to refine:</strong> W-Engines with <strong>percentage-based passives</strong> that scale linearly. Cannon Rotor's ATK buff going from 15% → 30% at R5 is a massive upgrade per copy. Bashful Demon's ATK buff scales the same way. These are worth refining.</li>
+        <li><strong>Low value to refine:</strong> W-Engines where the passive triggers a <strong>flat effect</strong> that does not scale much. A 5% increase per refinement level on a conditional buff that is not always active is low priority.</li>
+        <li><strong>General rule:</strong> Refine the W-Engine on your <strong>main DPS first</strong>. Their damage output benefits the most from passive upgrades. Support and Stun W-Engines are lower priority — their job (buffing, stunning) does not depend as heavily on passive scaling.</li>
+        <li><strong>Never refine an S-rank you only have one copy of.</strong> A second copy of a limited S-rank W-Engine is better kept separate for a second agent of the same type than merged for a marginal passive upgrade. Two agents with R1 S-rank W-Engines &gt; one agent with R2.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="we-faq-card">
+    <h3>I have 5 W-Engines in my inventory. How do I pick the right one for my DPS?</h3>
+    <div class="faq-a">
+      <p>This is the real question most players face. You are not choosing from a catalog — you are choosing from what you already own. Here is a practical decision flowchart:</p>
+      <ul>
+        <li><strong>Step 1 — Match the Specialty first.</strong> If your agent is Attack, filter to Attack W-Engines. The passive is the biggest damage lever and it only works on-type. Everything else is secondary.</li>
+        <li><strong>Step 2 — Compare the Advanced Stat to what your agent needs.</strong> Ye Shunguang at &lt;40% CRIT Rate benefits more from a CRIT Rate W-Engine (Starlight Engine) than a higher-ATK one with the wrong substat. Hit your stat thresholds before optimizing raw ATK.</li>
+        <li><strong>Step 3 — Check if you can overclock (refine) an A-rank.</strong> A Gilded Blossom at R5 (bought from the Logistics shop with free daily currency) often beats an R1 S-rank from the standard banner. 3600 Logistics points buys both the engine and the overclock material. This is a completely free path to a competitive weapon.</li>
+        <li><strong>Step 4 — When in doubt, use the Build Planner.</strong> Open our <a href="/build-planner/">Build Planner</a>, select your agent, and swap W-Engines to see the exact ATK, CRIT, and DMG differences. The numbers will make the decision obvious.</li>
+      </ul>
+      <p><strong>Real example from the community:</strong> A player asked about YSG with a choice between Nekomata's signature, Starlight Engine, and Gilded Blossom. The answer: Starlight Engine if your CRIT Rate is low (it has CRIT Rate substat), Nekomata's sig if you need raw ATK (higher base stats, and the first half of its passive actually works on YSG), and Gilded Blossom R5 as the best free option you can farm over time.</p>
+    </div>
+  </div>
+
+  <div class="we-faq-card">
+    <h3>Is the Suit-Up Gift in the shop worth 5 pulls?</h3>
+    <div class="faq-a">
+      <p>The <strong>Suit-Up Gift</strong> in the Signal Shop costs the equivalent of 5 pulls and lets you pick one specific A-rank W-Engine. The community is split, but here is the honest math:</p>
+      <ul>
+        <li><strong>If you are missing a key A-rank engine (Kaboom, Gilded Blossom, Demara Battery):</strong> 5 pulls for a guaranteed, targeted weapon is a good deal. You could spend 50+ pulls on a weapon banner and not get the specific A-rank you want. Kaboom is especially valuable for Support agents who need Energy Regen.</li>
+        <li><strong>If you already have most A-rank engines at R1-R2:</strong> Skip it. You will eventually get more copies from pulling on character banners. 5 pulls toward a limited character pity is more valuable than an R2→R3 refinement.</li>
+        <li><strong>The counterargument:</strong> Now that the weapon banner has a guaranteed path (you can target a specific S-rank W-Engine without RNG), there are fewer agents who need A-rank alternatives. The Suit-Up Gift was more tempting before the weapon banner guarantee existed. Today, it is situational.</li>
+      </ul>
+      <p><strong>Bottom line:</strong> If you are F2P and need Kaboom for your Support, buy it. If you spend on the battle pass or weapon banner, save your pulls.</p>
+    </div>
+  </div>
+
+  <!-- Ad Slot: Bottom Leaderboard -->
+  <div class="ad-slot ad-slot-bottom" style="margin-top:32px">
+    <span class="ad-placeholder">Ad placeholder &mdash; replace with AdSense code</span>
+  </div>
+</div></section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Database</h4>
+        <ul>
+          <li><a href="/agents/">Agents</a></li>
+          <li><a href="/w-engines/">W-Engines</a></li>
+          <li><a href="/drive-discs/">Drive Discs</a></li>
+          <li><a href="/bangboo/">Bangboo</a></li>
+          <li><a href="/tier-list/">Tier List</a></li>
+          <li><a href="/items/">Items</a></li>
+          <li><a href="/codes/">Redeem Codes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides &amp; Tools</h4>
+        <ul>
+          <li><a href="/guides/">Beginner&rsquo;s Guide</a></li>
+          <li><a href="/guides/gacha.html">Gacha &amp; Pity Guide</a></li>
+          <li><a href="/guides/download.html">Download <li><a href="/guides/download.html">Download &amp; Install</a></li>amp; Install</a></li><li><a href="/guides/time.html">Time Investment Guide</a></li>
+          <li><a href="/build-planner/">Build Planner</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ZZZ Database. Not affiliated with HoYoverse.</p>
+      <p style="font-size:11px;color:var(--text3);margin-top:4px">Data sourced from community wikis. Game assets &copy; HoYoverse.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/w-engines/wengines-data.js"></script>
+<script>
 var D=window.__WENGINES__||[],TYPE_ICONS={Attack:'⚔️',Stun:'💥',Anomaly:'🌀',Support:'💚',Defense:'🛡️',Rupture:'💢'};
 function render(l){document.getElementById('c').textContent=l.length+'/'+D.length;document.getElementById('g').innerHTML=l.map(function(w){var rc=w.r==='S'?'r-s':'r-a';return '<a href="/w-engines/'+w.s+'/" class="we-card"><span class="we-r '+rc+'">'+(w.r==='S'?'S':'A')+'</span><div class="we-icon">'+(TYPE_ICONS[w.t]||'⚙️')+'</div><span class="we-name">'+w.n+'</span><span class="we-type">'+w.t+'</span><span class="we-atk">ATK '+w.a+'</span><span class="we-sub">'+w.sub+' '+w.sv+'</span></a>'}).join('')}
 function filter(){var q=document.getElementById('s').value.toLowerCase(),r=document.getElementById('rank').value,t=document.getElementById('type').value;var l=D.filter(function(w){if(r!=='all'&&w.r!==r)return false;if(t!=='all'&&w.t!==t)return false;if(q&&w.n.toLowerCase().indexOf(q)<0)return false;return true});l.sort(function(a,b){if(a.r!==b.r)return a.r==='S'?-1:1;return a.n.localeCompare(b.n)});render(l)}
-document.getElementById('s').addEventListener('input',filter);document.getElementById('rank').addEventListener('change',filter);document.getElementById('type').addEventListener('change',filter);document.getElementById('hb').addEventListener('click',function(){document.getElementById('nl').classList.toggle('open')});
+document.getElementById('s').addEventListener('input',filter);document.getElementById('rank').addEventListener('change',filter);document.getElementById('type').addEventListener('change',filter);
+document.getElementById('hb').addEventListener('click',function(){document.getElementById('nl').classList.toggle('open')});
 render(D.sort(function(a,b){if(a.r!==b.r)return a.r==='S'?-1:1;return a.n.localeCompare(b.n)}));
-</script></body></html>
+</script>
+</body>
+</html>

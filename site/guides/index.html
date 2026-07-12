@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Beginner's Guide — Zenless Zone Zero | ZZZ Database</title>
+<meta name="description" content="New to Zenless Zone Zero? Learn combat basics, elements, specialties, agents, W-Engines, Drive Discs, and how to build your first team.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://zzless.com/guides/">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.guide-container { max-width: 800px; margin: 0 auto; }
+.guide-container h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+.guide-container h1 span { color: #F9D366; }
+.guide-subtitle { font-size: 15px; color: #8899aa; margin-bottom: 32px; line-height: 1.6; }
+.guide-section {
+  background: var(--surface);
+  border: 1px solid rgba(134,168,231,0.15);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.guide-section h2 {
+  font-size: 20px; font-weight: 600; color: #86a8e7;
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+.guide-section h3 {
+  font-size: 16px; font-weight: 600; color: #F9D366;
+  margin: 16px 0 6px;
+}
+.guide-section p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 10px; }
+.guide-section ul { color: var(--text2); font-size: 15px; line-height: 1.8; padding-left: 20px; margin-bottom: 10px; }
+.guide-section ul li { margin-bottom: 4px; }
+.guide-section a { color: #86a8e7; text-decoration: none; }
+.guide-section a:hover { text-decoration: underline; }
+.guide-cta {
+  text-align: center; padding: 28px;
+  background: var(--surface);
+  border: 1px solid rgba(249,211,102,0.3);
+  border-radius: var(--radius);
+  margin-top: 28px;
+}
+.guide-cta h2 { font-size: 20px; color: #F9D366; margin-bottom: 16px; }
+.guide-cta-grid { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.guide-cta-btn {
+  display: inline-block; padding: 10px 20px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  background: var(--accent); color: #24242D;
+  transition: all .22s ease;
+}
+.guide-cta-btn:hover { background: var(--accent-d); transform: translateY(-1px); }
+.guide-cta-btn.alt { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+.guide-cta-btn.alt:hover { background: rgba(134,168,231,0.1); }
+@media (max-width: 480px) {
+  .guide-container h1 { font-size: 26px; }
+  .guide-cta-grid { flex-direction: column; align-items: center; }
+}
+</style>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xl629udfvo");</script>
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="logo">ZZZ<span>DB</span></a>
+    <button class="hamburger" id="hb" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <ul class="nav-links" id="nl">
+        <li><a href="/tier-list/">Tier List</a></li>
+        <li><a href="/agents/">Agents</a></li>
+        <li><a href="/w-engines/">W-Engines</a></li>
+        <li><a href="/drive-discs/">Drive Discs</a></li>
+        <li><a href="/bangboo/">Bangboo</a></li>
+        <li><a href="/build-planner/" class="nav-highlight">Builder</a></li>
+        <li><a href="/codes/">Codes</a></li>
+        <li><a href="/items/">Items</a></li>
+      </ul>
+      <button class="theme-toggle">EN ▾</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+<div class="guide-container">
+
+<h1>Beginner&rsquo;s Guide to <span>Zenless Zone Zero</span></h1>
+<p class="guide-subtitle">New to New Eridu? This guide covers everything you need to know to get started &mdash; from combat basics to building your first team.</p>
+
+<div class="guide-section">
+  <h2>🎮 What is Zenless Zone Zero?</h2>
+  <p>Zenless Zone Zero (ZZZ) is a free-to-play urban fantasy action RPG developed by <strong>HoYoverse</strong> (the creators of Genshin Impact and Honkai: Star Rail). Set in the post-apocalyptic city of New Eridu, you play as a <strong>Proxy</strong> who guides agents through dangerous dimensions called <strong>Hollows</strong>.</p>
+  <p>The game features fast-paced real-time combat, a roster of unique agents, and roguelike exploration mechanics. It is available on <strong>PC, PlayStation 5, iOS, and Android</strong>.</p>
+</div>
+
+<div class="guide-section">
+  <h2>⚔️ Combat Basics</h2>
+  <p>ZZZ combat is action-based and real-time. You control a team of up to 3 agents, switching between them during battle.</p>
+  <h3>Key Mechanics</h3>
+  <ul>
+    <li><strong>Basic Attack</strong> — String together light attacks for consistent damage.</li>
+    <li><strong>Special Attack (EX)</strong> — Consumes Energy for powerful skills with i-frames.</li>
+    <li><strong>Dodge / Dash</strong> — Avoid enemy attacks. A perfect dodge triggers a <strong>Dodge Counter</strong> for bonus damage.</li>
+    <li><strong>Assist / Parry</strong> — Swap agents at the right moment to parry and counterattack.</li>
+    <li><strong>Chain Attack</strong> — After stunning an enemy, trigger sequential attacks from all 3 team members.</li>
+    <li><strong>Ultimate</strong> — Each agent has a powerful ultimate ability that charges during combat.</li>
+  </ul>
+</div>
+
+<div class="guide-section">
+  <h2>🎯 Elements &amp; Specialties</h2>
+  <p>Each agent has an <strong>Element</strong> and a <strong>Specialty</strong> (role). Understanding these is key to building effective teams.</p>
+  <h3>5 Elements</h3>
+  <ul>
+    <li>🔥 <strong>Fire</strong> — High burst damage and burning effects.</li>
+    <li>⚡ <strong>Electric</strong> — Fast attacks with shock and chain potential.</li>
+    <li>❄️ <strong>Ice</strong> — Freeze and control with critical damage bonuses.</li>
+    <li>💪 <strong>Physical</strong> — Stagger and interrupt with consistent DPS.</li>
+    <li>✨ <strong>Ether</strong> — Energy-based attacks with utility and support.</li>
+  </ul>
+  <h3>6 Specialties</h3>
+  <ul>
+    <li><strong>Attack</strong> — Primary damage dealers. Focus on ATK, CRIT Rate, and CRIT DMG.</li>
+    <li><strong>Stun</strong> — Builds Daze to stun enemies. Essential for triggering Chain Attacks.</li>
+    <li><strong>Anomaly</strong> — Applies elemental anomalies (burn, shock, freeze, corruption, assault).</li>
+    <li><strong>Support</strong> — Buffs teammates and debuffs enemies. Build for Energy Regen.</li>
+    <li><strong>Defense</strong> — Tanks with shields and damage reduction. Scales with DEF stat.</li>
+    <li><strong>Rupture</strong> — Specialized in breaking enemy defenses (2.0+).</li>
+  </ul>
+  <p>Browse all agents with our <a href="/agents/">Agent Database</a> &mdash; filter by element and specialty.</p>
+</div>
+
+<div class="guide-section">
+  <h2>🛠️ Gear: W-Engines &amp; Drive Discs</h2>
+  <p>Every agent can equip one <strong>W-Engine</strong> (weapon) and six <strong>Drive Discs</strong> (equipment).</p>
+  <h3>W-Engines</h3>
+  <p>W-Engines provide base ATK and a secondary stat (e.g., CRIT Rate, ATK%). Each has a unique <strong>Passive Effect</strong> that activates when the agent's specialty matches the W-Engine's type. There are 4 rarities: <strong>S, A, B, and C</strong>.</p>
+  <p>👉 <a href="/w-engines/">Browse all 46 W-Engines</a></p>
+  <h3>Drive Discs</h3>
+  <p>Drive Discs come in sets of 2 and 4 pieces. Equip 4 pieces of one set + 2 pieces of another to maximize bonuses. Each disc has a main stat and up to 4 sub-stats.</p>
+  <p>👉 <a href="/drive-discs/">Browse all 25 Drive Disc sets</a></p>
+</div>
+
+<div class="guide-section">
+  <h2>👥 Team Building Basics</h2>
+  <p>A balanced team typically includes:</p>
+  <ul>
+    <li><strong>1 Stun agent</strong> — Builds Daze to create stun windows.</li>
+    <li><strong>1 Attack or Anomaly agent</strong> — Your primary damage source.</li>
+    <li><strong>1 Support or Defense agent</strong> — Buffs, shields, or healing.</li>
+  </ul>
+  <p>Some agents have <strong>Additional Abilities</strong> that activate when paired with agents of the same faction or element. Check individual agent pages for synergy details.</p>
+  <p>👉 <a href="/tier-list/">Check the Tier List</a> for the best agents in each role.</p>
+</div>
+
+<div class="guide-section">
+  <h2>⚡ Best Starter Team: Pyrois + Norma + Nicole</h2>
+  <p>Based on community consensus (July 2026), this is the <strong>best low-cost team for new players</strong>:</p>
+  <ul>
+    <li><strong>Pyrois</strong> (free S-rank from story progression) — Main DPS. High fire damage output, straightforward to play.</li>
+    <li><strong>Norma</strong> (limited banner) — Stun support. Builds Daze quickly and synergizes perfectly with Pyrois. Flashy, fun playstyle.</li>
+    <li><strong>Nicole</strong> (free A-rank) — Support/Debuffer. Reduces enemy DEF, groups enemies with her black hole, and requires zero investment to be effective.</li>
+  </ul>
+  <p>This team covers all three core roles (DPS + Stun + Support) with excellent synergy and minimal investment. Focus all your resources on this team first before building a second one.</p>
+  <p><strong>Alternative:</strong> Soldier 11 + Koleda + Lucy is another strong all-F2P option if you haven't unlocked Pyrois yet.</p>
+</div>
+
+<div class="guide-section">
+  <h2>💎 Gacha &amp; Pull Priority</h2>
+  <h3>Should You Pull Right Now?</h3>
+  <p>As a new player with the free story agents (Anby, Billy, Nicole, Grace, Pyrois), here is the recommended priority:</p>
+  <ul>
+    <li><strong>1st priority — A limited DPS you enjoy.</strong> Pyrois is free and strong, so you are not desperate. Wait for a DPS whose playstyle clicks with you.</li>
+    <li><strong>2nd priority — A top-tier Stun agent.</strong> Norma (best for Pyrois teams), Dialyn (most versatile), or Qingyi (Electric). Stun agents unlock Chain Attack windows and dramatically increase your damage output.</li>
+    <li><strong>3rd priority — A limited Support.</strong> Sunna, Astra Yao, or Yuzuha. Supports age well and fit into many teams.</li>
+  </ul>
+  <h3>When to Save</h3>
+  <p>Wait for the <strong>version livestream</strong> (~1 week before a new patch) before spending. The current banners will still be active, so you lose nothing by waiting. Remielle and Sigrid are coming in 3.1 — check if they fit your roster.</p>
+  <p>👉 <a href="/guides/gacha.html">Full Gacha System Guide — pity math, 50/50, F2P income</a></p>
+</div>
+
+<div class="guide-section">
+  <h2>🆓 F2P Resource Guide</h2>
+  <h3>How Much Can You Earn?</h3>
+  <ul>
+    <li><strong>~12,000–15,000 Polychrome per patch</strong> (6 weeks) from daily commissions, Hollow Zero, Shiyu Defense, events, and codes.</li>
+    <li><strong>30,000+ Polychrome one-time pool</strong> for new players from story quests, commissions, exploration, and achievements.</li>
+    <li>You need <strong>~22,000 Polychrome to guarantee a limited S-rank</strong> (hard pity). With the one-time pool, you can guarantee at least one limited agent right away.</li>
+  </ul>
+  <h3>What to Farm First</h3>
+  <ul>
+    <li><strong>IK Level (Inter-Knot)</strong> — Progress the story and spend Battery on resource stages. Higher IK unlocks higher-tier domains with better drops.</li>
+    <li><strong>Agent Levels</strong> — Get your core 3 to Lv.50+ before spreading resources. Character level gates skill upgrades and base stats.</li>
+    <li><strong>W-Engine Levels</strong> — Cheaper than character levels per stat gained. Keep W-Engines at your agent's level cap.</li>
+    <li><strong>Drive Discs (wait until Lv.40+)</strong> — Don't farm discs heavily before unlocking gold-tier drops. Use whatever drops from story and events until then.</li>
+    <li><strong>Skills</strong> — Prioritize core passive > basic attack > EX special > ultimate. Check individual agent guides for exact priority.</li>
+  </ul>
+  <p>👉 <a href="/items/">Browse all materials</a> &mdash; filter by category to plan your farming.</p>
+</div>
+
+<div class="guide-section">
+  <h2>🔍 Build Quality Self-Check</h2>
+  <p>You have leveled your agent, equipped a W-Engine, and filled all 6 disc slots. <strong>How do you know if your build is good enough?</strong> Stop farming when you can answer "yes" to these questions:</p>
+
+  <h3>The 5-Point Build Checklist</h3>
+  <ul>
+    <li><strong>1. Is the W-Engine type correct?</strong> If your Attack agent has an Anomaly W-Engine, the passive is dead. Fix this first — it is worth more than 2 weeks of disc farming.</li>
+    <li><strong>2. Is the 4-piece Drive Disc set bonus active?</strong> 4 pieces of the correct set with <strong>any</strong> stats beats 6 random pieces with good stats. The set bonus is a multiplier, not additive.</li>
+    <li><strong>3. Are your main stats correct on discs 4, 5, and 6?</strong> Disc 4 wants CRIT Rate or CRIT DMG (for DPS) or ATK% (for Anomaly). Disc 5 wants Element DMG% matching your agent. Disc 6 wants ATK% or Energy Regen. Wrong main stat = the disc is scrap regardless of substats.</li>
+    <li><strong>4. Do your key substats hit the thresholds?</strong> For a DPS: aim for 60%+ CRIT Rate and 120%+ CRIT DMG as a baseline. For Anomaly: 300+ Anomaly Proficiency. Count the number of useful substat rolls — if fewer than 50% of your substats are useful, keep farming.</li>
+    <li><strong>5. Are you within 90% of the cap?</strong> Sunna's buff caps at 3500 ATK, but 3350 (96% of cap) is functionally identical. The last few percentage points cost exponentially more stamina. Community wisdom: <strong>"maximums are not minimums."</strong> Stop when you are close.</li>
+  </ul>
+
+  <h3>Quick Disc Evaluation Trick</h3>
+  <p>Count the number of substat rolls that help your agent. A disc with +2 CRIT Rate, +2 CRIT DMG, +1 ATK% has 5 useful rolls. A disc with +3 HP, +2 DEF has 0 useful rolls — instant scrap. When comparing two builds, <strong>count total useful substat rolls across all 6 discs</strong>. The build with more useful rolls is almost always better, even if the main stats look similar.</p>
+</div>
+
+<div class="guide-section">
+  <h2>🐰 Bangboo Companions</h2>
+  <p>Bangboo are AI companions that assist in combat with automatic skills. Each Bangboo has an element and a unique ability. You can deploy one Bangboo per team, and its effectiveness increases when paired with agents of matching elements.</p>
+  <p>👉 <a href="/bangboo/">Browse all 39 Bangboo</a></p>
+</div>
+
+<div class="guide-cta">
+  <h2>Ready to Build Your Team?</h2>
+  <div class="guide-cta-grid">
+    <a href="/build-planner/" class="guide-cta-btn">🛠️ Open Build Planner</a>
+    <a href="/tier-list/" class="guide-cta-btn alt">📊 View Tier List</a>
+    <a href="/agents/" class="guide-cta-btn alt">⚔️ Browse Agents</a>
+  </div>
+</div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Database</h4>
+        <ul>
+          <li><a href="/agents/">Agents</a></li>
+          <li><a href="/w-engines/">W-Engines</a></li>
+          <li><a href="/drive-discs/">Drive Discs</a></li>
+          <li><a href="/bangboo/">Bangboo</a></li>
+          <li><a href="/tier-list/">Tier List</a></li>
+          <li><a href="/items/">Items</a></li>
+          <li><a href="/codes/">Redeem Codes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides &amp; Tools</h4>
+        <ul>
+          <li><a href="/guides/">Beginner&rsquo;s Guide</a></li>
+          <li><a href="/guides/gacha.html">Gacha &amp; Pity Guide</a></li>
+          <li><a href="/guides/download.html">Download <li><a href="/guides/download.html">Download &amp; Install</a></li>amp; Install</a></li><li><a href="/guides/time.html">Time Investment Guide</a></li>
+          <li><a href="/build-planner/">Build Planner</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ZZZ Database. Not affiliated with HoYoverse.</p>
+      <p style="font-size:11px;color:var(--text3);margin-top:4px">Data sourced from community wikis. Game assets &copy; HoYoverse.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('hb').addEventListener('click', function() {
+  document.getElementById('nl').classList.toggle('open');
+});
+</script>
+</body>
+</html>

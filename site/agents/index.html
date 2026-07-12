@@ -7,11 +7,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>ZZZ Agents — All Playable Characters | ZZZ Database</title>
-<meta name="description" content="All Zenless Zone Zero agents with elements, specialties, factions, and best builds. Filter by element, specialty, and rank.">
+<title>ZZZ Agents — All 44 Playable Characters | ZZZ Database</title>
+<meta name="description" content="Complete Zenless Zone Zero agent database — browse all 44 agents by element, specialty, rank, and faction. Learn how elements, specialties, and team roles work.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://zzless.com/agents/">
-<meta property="og:title" content="ZZZ Agents List"><meta property="og:description" content="All agents with elements, specialties, and builds.">
+<meta property="og:title" content="ZZZ Agents List"><meta property="og:description" content="All 44 agents with elements, specialties, factions, and builds.">
 <meta property="og:type" content="website"><meta property="og:url" content="https://zzless.com/agents/">
 <link rel="stylesheet" href="/shared.css">
 <style>
@@ -29,28 +29,237 @@
 .ag-bar input:focus{outline:none;border-color:#86a8e7}
 .ag-bar select{padding:8px 12px;border:1px solid rgba(134,168,231,0.3);border-radius:12px;background:var(--surface);color:#fff;font-size:14px}
 .ag-bar .ag-count{font-size:14px;color:#8899aa;white-space:nowrap}
-.ag-hero{text-align:center;padding:24px 0 8px}
-.ag-hero h1{font-size:32px;font-weight:600}.ag-hero h1 span{color:#F9D366}
-.ag-hero .ag-sub{font-size:15px;color:#8899aa}
+.ag-hero{text-align:center;padding:24px 0 8px}.ag-hero h1{font-size:32px;font-weight:600}.ag-hero h1 span{color:#F9D366}.ag-hero .ag-sub{font-size:15px;color:#8899aa}
+
+/* Meta + Q&A shared */
+.meta-box{margin:20px 0;padding:22px;background:var(--surface);border:1px solid rgba(249,211,102,0.25);border-radius:12px}
+.meta-box h2{font-size:18px;font-weight:600;color:#F9D366;margin-bottom:10px}
+.meta-box p{font-size:14px;color:#8899aa;line-height:1.8;margin-bottom:6px}
+
+.ag-faq{margin-top:36px}.ag-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}@media(max-width:600px){.ag-faq-grid{grid-template-columns:1fr}}
+.ag-faq h2{font-size:20px;font-weight:600;color:#F9D366;margin-bottom:6px}
+.ag-faq .faq-subtitle{font-size:14px;color:#8899aa;margin-bottom:16px}
+.ag-faq-card{background:var(--surface);border:1px solid rgba(134,168,231,0.2);border-radius:12px;padding:20px}
+.ag-faq-card h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;padding-left:12px;border-left:3px solid var(--accent)}
+.ag-faq-card .faq-a{font-size:14px;color:#8899aa;line-height:1.8;padding-left:15px}
+.ag-faq-card .faq-a a{color:#86a8e7;text-decoration:none}.ag-faq-card .faq-a a:hover{text-decoration:underline}
+.ag-faq-card .faq-a strong{color:#ccc}.ag-faq-card .faq-a ul{padding-left:18px;margin:6px 0}.ag-faq-card .faq-a ul li{margin-bottom:4px}
+
 @media(max-width:1200px){.ag-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:768px){.ag-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:480px){.ag-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
-<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xl629udfvo");</script></head>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xl629udfvo");</script>
+</head>
 <body>
-<nav aria-label="Main navigation"><div class="nav-inner"><a href="/" class="logo">ZZZ<span>DB</span></a><button class="hamburger" id="hb" aria-label="Menu">☰</button><div class="nav-right"><ul class="nav-links" id="nl"><li><a href="/tier-list/">Tier List</a></li><li><a href="/agents/">Agents</a></li><li><a href="/w-engines/">W-Engines</a></li><li><a href="/drive-discs/">Drive Discs</a></li><li><a href="/bangboo/">Bangboo</a></li><li><a href="/build-planner/" class="nav-highlight">Builder</a></li><li><a href="/codes/">Codes</a></li><li><a href="/items/">Items</a></li></ul><button class="theme-toggle">EN ▾</button></div></div></nav>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="logo">ZZZ<span>DB</span></a>
+    <button class="hamburger" id="hb" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <ul class="nav-links" id="nl">
+        <li><a href="/tier-list/">Tier List</a></li>
+        <li><a href="/agents/">Agents</a></li>
+        <li><a href="/w-engines/">W-Engines</a></li>
+        <li><a href="/drive-discs/">Drive Discs</a></li>
+        <li><a href="/bangboo/">Bangboo</a></li>
+        <li><a href="/build-planner/" class="nav-highlight">Builder</a></li>
+        <li><a href="/codes/">Codes</a></li>
+        <li><a href="/items/">Items</a></li>
+      </ul>
+      <button class="theme-toggle">EN ▾</button>
+    </div>
+  </div>
+</nav>
+
 <main class="container" style="max-width:1500px">
-<header class="ag-hero"><h1>Zenless Zone Zero <span>Agents</span></h1><p class="ag-sub" id="agSub">All 37 playable agents with elements, specialties, and factions.</p></header>
+
+<header class="ag-hero">
+  <h1>Zenless Zone Zero <span>Agents</span></h1>
+  <p class="ag-sub">All 44 playable agents &mdash; browse by element, specialty, rank, and faction.</p>
+</header>
+
+<!-- Meta Overview -->
+<div class="meta-box" style="max-width:1100px;margin-left:auto;margin-right:auto">
+  <h2>📊 Agent System at a Glance</h2>
+  <p>Every agent in ZZZ has three defining traits: <strong>Element</strong> (Fire, Electric, Ice, Physical, Ether), <strong>Specialty</strong> (Attack, Stun, Anomaly, Support, Defense, Rupture), and <strong>Rank</strong> (S or A). A fourth trait, <strong>Faction</strong>, determines team synergy through Additional Abilities — agents from the same faction often buff each other.</p>
+  <p>You obtain agents through the gacha (limited and standard banners), story progression (Pyrois is a free S-rank), and events. S-rank agents have higher base stats and stronger abilities, but a well-built A-rank with a synergistic team can clear all endgame content. Check individual agent pages for detailed stats, build recommendations, and team synergies.</p>
+</div>
+
+<!-- Ad Slot: Top Leaderboard -->
+<div class="ad-slot ad-slot-top" style="max-width:1100px;margin-left:auto;margin-right:auto">
+  <span class="ad-placeholder">Ad placeholder &mdash; replace with AdSense code</span>
+</div>
+
+<!-- Search & Filters -->
 <div class="ag-bar">
-  <input type="text" id="s" placeholder="Search agents..." autocomplete="off">
-  <span class="ag-count" id="c">37/37</span>
+  <input type="text" id="s" placeholder="Search agents by name..." autocomplete="off">
+  <span class="ag-count" id="c">44/44</span>
   <select id="rank"><option value="all">All Ranks</option><option value="S">S-Rank</option><option value="A">A-Rank</option></select>
   <select id="element"><option value="all">All Elements</option><option value="Fire">Fire 🔥</option><option value="Electric">Electric ⚡</option><option value="Ice">Ice ❄️</option><option value="Physical">Physical 💪</option><option value="Ether">Ether ✨</option></select>
   <select id="specialty"><option value="all">All Specialties</option><option>Attack</option><option>Stun</option><option>Anomaly</option><option>Support</option><option>Defense</option><option>Rupture</option></select>
 </div>
+
+<!-- Agent Grid -->
 <div class="ag-grid" id="g"></div>
+
+<!-- Ad Slot: Mid-Content Rectangle -->
+<div class="ad-slot ad-slot-inline" style="max-width:1100px;margin-left:auto;margin-right:auto">
+  <span class="ad-placeholder">Ad placeholder &mdash; replace with AdSense code</span>
+</div>
+
+<!-- Q&A Section -->
+<section class="ag-faq"><div class="ag-faq-grid" style="max-width:1100px;margin-left:auto;margin-right:auto">
+  <h2>❓ Agents FAQ</h2>
+  <p class="faq-subtitle">Common questions about ZZZ agents — how elements work, who to build, and what to pull.</p>
+
+  <div class="ag-faq-card">
+    <h3>What is the difference between S-rank and A-rank agents?</h3>
+    <div class="faq-a">
+      <p>S-rank agents have higher base stats, stronger passive abilities, and generally more complex kits. But the gap is <strong>not</strong> a wall:</p>
+      <ul>
+        <li>An M6 A-rank (maxed duplicates) is roughly equivalent to an M0 S-rank (no duplicates) in raw performance. Nicole at M6 is better than Rina at M0 in many teams because her DEF shred scales harder.</li>
+        <li>S-rank agents require more resources to max — more ascension materials, more Dennies, more skill chips. A-ranks are cheaper to build and faster to get online.</li>
+        <li>The real differentiator is the <strong>kit</strong>, not the rarity badge. Some A-ranks (Nicole, Lucy, Soukaku) have irreplaceable utility that no S-rank duplicates.</li>
+      </ul>
+      <p>Build the agents whose kits fit your team. Rarity is a rough power indicator, not a build order.</p>
+    </div>
+  </div>
+
+  <div class="ag-faq-card">
+    <h3>How do elements work? Do I need one of each?</h3>
+    <div class="faq-a">
+      <p>Elements determine which enemies your agent is strong or weak against. Matching element to enemy weakness is a core part of team building:</p>
+      <ul>
+        <li><strong>Fire 🔥</strong> — Strong vs enemies with the Burn anomaly. Fire agents tend to have high burst damage.</li>
+        <li><strong>Electric ⚡</strong> — Strong vs mechanical enemies. Shock anomaly deals chip damage over time.</li>
+        <li><strong>Ice ❄️</strong> — Strong vs agile enemies. Freeze locks enemies in place, enabling free damage windows.</li>
+        <li><strong>Physical 💪</strong> — Strong vs humanoid enemies. Assault anomaly deals massive single-hit damage.</li>
+        <li><strong>Ether ✨</strong> — Strong vs ethereal/corrupted enemies. Corruption anomaly reduces enemy resistances.</li>
+      </ul>
+      <p><strong>Do you need one of each?</strong> For Shiyu Defense (endgame rotation), yes — different stages have different elemental weaknesses. Having at least one carry per element ensures you are never walled by a bad matchup. But you do not need them all at once — build one team first, then expand elemental coverage over time.</p>
+    </div>
+  </div>
+
+  <div class="ag-faq-card">
+    <h3>What does each Specialty actually do?</h3>
+    <div class="faq-a">
+      <p>An agent's Specialty defines their combat role. Understanding these is critical for team building:</p>
+      <ul>
+        <li><strong>Attack ⚔️</strong> — Primary damage dealer. Stays on-field most of the time. Scales with ATK, CRIT Rate, and CRIT DMG. Examples: Ye Shunguang, Ellen Joe.</li>
+        <li><strong>Stun 💥</strong> — Builds Daze to stun enemies. The team's enabler — without a stunner, your DPS cannot access Chain Attack windows. Examples: Nangong Yu, Lighter.</li>
+        <li><strong>Anomaly 🌀</strong> — Applies elemental anomalies (Burn, Shock, Freeze, Corruption, Assault). Deals damage through anomaly procs rather than raw ATK. Often pairs with another Anomaly for Disorder chains. Examples: Miyabi, Burnice.</li>
+        <li><strong>Support 💚</strong> — Buffs allies and/or debuffs enemies. The backbone of any team. Supports age the best because their utility is rarely powercrept. Examples: Sunna, Astra Yao.</li>
+        <li><strong>Defense 🛡️</strong> — Tank with shields and damage reduction. Less common than other roles. Caesar King is the standout — she provides a team-wide shield and ATK buff. Examples: Caesar King, Ben Bigger.</li>
+        <li><strong>Rupture 🔓</strong> — New in 2.0+. Specializes in breaking specific enemy defense mechanics. Niche but powerful in the right content. Examples: Yixuan.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ag-faq-card">
+    <h3>Which free agents are worth building?</h3>
+    <div class="faq-a">
+      <p>You get several agents for free through story and events. Here is which ones have long-term value:</p>
+      <ul>
+        <li><strong>Pyrois (S-rank, Fire Attack)</strong> — Free S-rank from story. Legitimately strong. Worth maxing as your primary Fire DPS. He competes with limited S-ranks and holds up in endgame.</li>
+        <li><strong>Nicole (A-rank, Ether Support)</strong> — Free from story. One of the best DEF shredders in the game. Still used in top-tier teams at M6. Her black hole groups enemies, her debuff stacks multiplicatively. Build her.</li>
+        <li><strong>Anby Demara (A-rank, Electric Stun)</strong> — Free starter. Fine early, but falls off compared to limited stunners. Use her until you pull Qingyi, Lighter, or another S-rank stunner, then bench.</li>
+        <li><strong>Billy Kid (A-rank, Physical Attack)</strong> — Free starter. Fun ranged playstyle, but damage ceiling is low at endgame. Viable for story and early Hollow Zero. Replace when you get a better Physical carry.</li>
+        <li><strong>Lucy (A-rank, Fire Support)</strong> — Available from events and standard banner. Excellent ATK buffer for Fire teams. Pairs perfectly with Soldier 11 or Pyrois.</li>
+        <li><strong>Soukaku (A-rank, Ice Support)</strong> — Available from standard. Strong Ice-specific buffer. If you run an Ice DPS, Soukaku is a free upgrade over most alternatives.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ag-faq-card">
+    <h3>How many agents should I build?</h3>
+    <div class="faq-a">
+      <p>A common mistake is spreading resources too thin. Here is the optimal progression:</p>
+      <ul>
+        <li><strong>Phase 1 (IK Lv.1-40):</strong> Build exactly <strong>3 agents</strong> — one team. 1 DPS + 1 Stun + 1 Support. Get all three to Lv.50 with leveled W-Engines and +12 purple discs. Do not touch a 4th agent until these 3 are done.</li>
+        <li><strong>Phase 2 (IK Lv.40-50):</strong> Add a <strong>second team</strong> of 3 agents. By now you should have enough standard/master tapes to have pulled a few more S-ranks. Your second DPS should cover a different element than your first.</li>
+        <li><strong>Phase 3 (IK Lv.50+):</strong> Start building situational agents — a 2nd support of a different element, a Defense agent for survival-heavy content, or a 2nd Anomaly for Disorder teams. At this point you are optimizing for Shiyu Defense rotations, not progression.</li>
+      </ul>
+      <p>Resources are the real bottleneck, not agent availability. One maxed team clears more content than six half-built agents.</p>
+    </div>
+  </div>
+
+  <div class="ag-faq-card">
+    <h3>How do I get more agents?</h3>
+    <div class="faq-a">
+      <p>Agents come from four sources:</p>
+      <ul>
+        <li><strong>Limited Banners</strong> — The primary source of S-rank agents. Use Encrypted Master Tapes (converted from Polychrome). The featured agent has a 50% chance on each S-rank pull. See our <a href="/guides/gacha.html">Gacha Guide</a> for the full pity system breakdown.</li>
+        <li><strong>Standard (Stable) Banner</strong> — Uses regular Master Tapes. Contains a fixed pool of S-rank agents: Nekomata, Soldier 11, Koleda, Grace, Rina, Von Lycaon. You will naturally accumulate standard tapes through gameplay — do not spend Polychrome here.</li>
+        <li><strong>Story &amp; Events</strong> — Pyrois is a free S-rank from story progression. Events and login campaigns occasionally give free A-rank agents or agent selectors.</li>
+        <li><strong>300-Pull Selector</strong> — After 300 pulls on the standard banner, you can choose any standard S-rank agent. This is a long-term goal (6-12 months F2P). Most players pick Rina (for support flexibility) or a DPS they are missing.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ag-faq-card">
+    <h3>What should I look for when picking an agent to build?</h3>
+    <div class="faq-a">
+      <p>Don't just look at the rarity badge. Evaluate each agent on four dimensions:</p>
+      <ul>
+        <li><strong>Element coverage:</strong> Do you already have a carry of this element? If yes, this agent competes for the same role. If no, they fill a gap. Filling gaps &gt; overlapping coverage.</li>
+        <li><strong>Team synergy:</strong> Does this agent enable your existing roster? Norma makes Pyrois teams dramatically better. Sunna buffs any Physical DPS. Pulling agents that buff your best carry is more valuable than pulling a standalone DPS.</li>
+        <li><strong>Investment cost:</strong> A-ranks are cheaper to build (fewer materials per ascension). If your resources are stretched, an A-rank you can max now outperforms an S-rank stuck at Lv.40.</li>
+        <li><strong>Playstyle comfort:</strong> This matters more than any tier list. If you hate the agent's rotation, you won't play them optimally. An agent you enjoy piloting will always perform better in your hands than a meta agent you find clunky.</li>
+      </ul>
+      <p>Click any agent card above to see their full stats, then open the <a href="/build-planner/">Build Planner</a> to test different W-Engine and Drive Disc combinations before committing resources.</p>
+    </div>
+  </div>
+
+  <!-- Ad Slot: Bottom Leaderboard -->
+  <div class="ad-slot ad-slot-bottom" style="margin-top:32px">
+    <span class="ad-placeholder">Ad placeholder &mdash; replace with AdSense code</span>
+  </div>
+</div></section>
+
 </main>
-<footer class="site-footer"><div class="footer-inner"><p>&copy; 2026 ZZZ Database. Not affiliated with HoYoverse.</p><div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/contact.html">Contact</a></div></div></footer>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Database</h4>
+        <ul>
+          <li><a href="/agents/">Agents</a></li>
+          <li><a href="/w-engines/">W-Engines</a></li>
+          <li><a href="/drive-discs/">Drive Discs</a></li>
+          <li><a href="/bangboo/">Bangboo</a></li>
+          <li><a href="/tier-list/">Tier List</a></li>
+          <li><a href="/items/">Items</a></li>
+          <li><a href="/codes/">Redeem Codes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides &amp; Tools</h4>
+        <ul>
+          <li><a href="/guides/">Beginner&rsquo;s Guide</a></li>
+          <li><a href="/guides/gacha.html">Gacha &amp; Pity Guide</a></li>
+          <li><a href="/guides/download.html">Download <li><a href="/guides/download.html">Download &amp; Install</a></li>amp; Install</a></li><li><a href="/guides/time.html">Time Investment Guide</a></li>
+          <li><a href="/build-planner/">Build Planner</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ZZZ Database. Not affiliated with HoYoverse.</p>
+      <p style="font-size:11px;color:var(--text3);margin-top:4px">Data sourced from community wikis. Game assets &copy; HoYoverse.</p>
+    </div>
+  </div>
+</footer>
+
 <script src="/agents/agents-data.js"></script>
 <script>
 var D=window.__AGENTS__||[];
@@ -59,7 +268,7 @@ function render(l){
   document.getElementById('g').innerHTML=l.map(function(a){
     return '<a href="/agents/'+a.s+'/" class="ag-card">'+
       '<span class="ag-rank r-'+(a.r==='S'?'s':'a')+'">'+(a.r==='S'?'S':'A')+'</span>'+
-      '<div class="ag-icon"><img src="/images/agents/'+a.s+'.png" alt="'+a.n+'" style="width:100%;height:100%;object-fit:contain;border-radius:8px"></div>'+
+      '<div class="ag-icon"><img src="/images/agents/'+a.s+'.png" alt="'+a.n+'" style="width:100%;height:100%;object-fit:contain;border-radius:8px" onerror="this.parentElement.innerHTML=\'<span style=font-size:40px>'+a.icon+'</span>\'"></div>'+
       '<span class="ag-name">'+a.n+'</span>'+
       '<span class="ag-faction">'+a.f+'</span>'+
       '<span class="ag-spec">'+a.sp+'</span>'+

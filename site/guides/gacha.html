@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Gacha & Pity System Guide — Zenless Zone Zero | ZZZ Database</title>
+<meta name="description" content="Complete ZZZ gacha guide: soft pity at pull 74 (character) and 65 (weapon), 50/50 system, guarantee carry-over, F2P Polychrome income, and pull strategy tips.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://zzless.com/guides/gacha.html">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.guide-container { max-width: 800px; margin: 0 auto; }
+.guide-container h1 { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
+.guide-container h1 span { color: #F9D366; }
+.guide-subtitle { font-size: 15px; color: #8899aa; margin-bottom: 32px; line-height: 1.6; }
+.guide-section {
+  background: var(--surface);
+  border: 1px solid rgba(134,168,231,0.15);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.guide-section h2 {
+  font-size: 20px; font-weight: 600; color: #86a8e7;
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+}
+.guide-section h3 {
+  font-size: 16px; font-weight: 600; color: #F9D366;
+  margin: 16px 0 6px;
+}
+.guide-section p { font-size: 15px; color: var(--text2); line-height: 1.8; margin-bottom: 10px; }
+.guide-section ul { color: var(--text2); font-size: 15px; line-height: 1.8; padding-left: 20px; margin-bottom: 10px; }
+.guide-section ul li { margin-bottom: 4px; }
+.guide-section a { color: #86a8e7; text-decoration: none; }
+.guide-section a:hover { text-decoration: underline; }
+.pity-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+.pity-table th { background: rgba(134,168,231,0.12); color: var(--accent); padding: 10px 14px; text-align: left; font-weight: 600; }
+.pity-table td { padding: 10px 14px; color: var(--text2); border-bottom: 1px solid rgba(134,168,231,0.1); }
+.pity-table tr:hover td { background: rgba(134,168,231,0.04); }
+.pity-highlight { color: #F9D366; font-weight: 600; }
+.stat-box {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px;
+  margin: 16px 0;
+}
+.stat-card {
+  background: var(--bg); border: 1px solid rgba(134,168,231,0.2); border-radius: var(--radius-sm);
+  padding: 16px; text-align: center;
+}
+.stat-card .stat-num { font-size: 28px; font-weight: 700; color: #F9D366; }
+.stat-card .stat-label { font-size: 12px; color: var(--text3); text-transform: uppercase; letter-spacing: .04em; margin-top: 4px; }
+.guide-cta {
+  text-align: center; padding: 28px;
+  background: var(--surface);
+  border: 1px solid rgba(249,211,102,0.3);
+  border-radius: var(--radius);
+  margin-top: 28px;
+}
+.guide-cta h2 { font-size: 20px; color: #F9D366; margin-bottom: 16px; }
+.guide-cta-grid { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.guide-cta-btn {
+  display: inline-block; padding: 10px 20px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  background: var(--accent); color: #24242D;
+  transition: all .22s ease;
+}
+.guide-cta-btn:hover { background: var(--accent-d); transform: translateY(-1px); }
+.guide-cta-btn.alt { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+.guide-cta-btn.alt:hover { background: rgba(134,168,231,0.1); }
+@media (max-width: 480px) {
+  .guide-container h1 { font-size: 26px; }
+  .pity-table { font-size: 12px; }
+  .pity-table th, .pity-table td { padding: 8px 10px; }
+}
+</style>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xl629udfvo");</script>
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="logo">ZZZ<span>DB</span></a>
+    <button class="hamburger" id="hb" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <ul class="nav-links" id="nl">
+        <li><a href="/tier-list/">Tier List</a></li>
+        <li><a href="/agents/">Agents</a></li>
+        <li><a href="/w-engines/">W-Engines</a></li>
+        <li><a href="/drive-discs/">Drive Discs</a></li>
+        <li><a href="/bangboo/">Bangboo</a></li>
+        <li><a href="/build-planner/" class="nav-highlight">Builder</a></li>
+        <li><a href="/codes/">Codes</a></li>
+        <li><a href="/items/">Items</a></li>
+      </ul>
+      <button class="theme-toggle">EN ▾</button>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+<div class="guide-container">
+
+<h1>Gacha &amp; Pity System <span>Guide</span></h1>
+<p class="guide-subtitle">Everything you need to know about ZZZ's gacha mechanics — soft pity, 50/50, hard pity, pull currencies, and how to maximize your Polychrome as a free-to-play player. Based on community-verified data from zzz.rng.moe.</p>
+
+<div class="guide-section">
+  <h2>🎰 How the Pity System Works</h2>
+  <p>Zenless Zone Zero uses the same gacha model as other HoYoverse titles (Genshin Impact, Honkai: Star Rail). Every pull on a limited banner has a chance to drop an S-rank agent or W-Engine. The system guarantees you <strong>will</strong> get one within a certain number of pulls through "pity."</p>
+
+  <div class="stat-box">
+    <div class="stat-card">
+      <div class="stat-num">0.6%</div>
+      <div class="stat-label">Base S-Rank Rate</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">74</div>
+      <div class="stat-label">Character Soft Pity</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">65</div>
+      <div class="stat-label">Weapon Soft Pity</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">~95%</div>
+      <div class="stat-label">Get S-Rank by Pull 82</div>
+    </div>
+  </div>
+
+  <h3>Soft Pity Explained</h3>
+  <p>After a certain number of pulls without an S-rank, your odds <strong>increase dramatically</strong> each pull. This is called "soft pity" — and it is the real mechanic that determines when you get your S-rank.</p>
+
+  <table class="pity-table">
+    <tr><th>Banner Type</th><th>Soft Pity Starts</th><th>Rate After Start</th><th>~95% by Pull</th><th>Hard Pity</th></tr>
+    <tr>
+      <td><strong>Character Banner</strong></td>
+      <td class="pity-highlight">Pull #74</td>
+      <td>~6.6% → increases each pull</td>
+      <td>Pull #82</td>
+      <td>Pull #90</td>
+    </tr>
+    <tr>
+      <td><strong>W-Engine Banner</strong></td>
+      <td class="pity-highlight">Pull #65</td>
+      <td>~7% → increases each pull</td>
+      <td>Pull #71</td>
+      <td>Pull #80</td>
+    </tr>
+    <tr>
+      <td><strong>Bangboo Banner</strong></td>
+      <td class="pity-highlight">N/A (separate currency)</td>
+      <td>Fixed rates, no pity</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+  </table>
+
+  <p><strong>Key takeaway:</strong> "Hard pity" (90 for character, 80 for weapon) is mostly theoretical. In practice, the overwhelming majority of players get their S-rank between pulls 75–82. Going to 90 is a ~1 in 13 million chance — it essentially never happens.</p>
+</div>
+
+<div class="guide-section">
+  <h2>🎯 The 50/50 System</h2>
+  <p>When you pull an S-rank on a limited character banner, there is a <strong>50% chance</strong> it is the featured agent and a <strong>50% chance</strong> it is a standard S-rank (the "50/50").</p>
+
+  <h3>If You Lose the 50/50</h3>
+  <ul>
+    <li>Your next S-rank on <strong>any</strong> limited character banner is <strong>100% guaranteed</strong> to be the featured agent.</li>
+    <li>This guarantee <strong>carries over</strong> between limited character banners — it does not expire. If you lose 50/50 on Norma's banner, save your guarantee for Remielle.</li>
+    <li>The guarantee is banner-type specific: character guarantees only apply to character banners, weapon to weapon banners.</li>
+  </ul>
+
+  <h3>If You Win the 50/50</h3>
+  <ul>
+    <li>Your next S-rank will again be a 50/50 — there is no "win streak" protection.</li>
+    <li>Your pity counter resets to 0 after pulling any S-rank.</li>
+  </ul>
+
+  <div class="stat-box">
+    <div class="stat-card">
+      <div class="stat-num">~22,000</div>
+      <div class="stat-label">Poly for Guaranteed S-Rank</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">~12,000</div>
+      <div class="stat-label">Avg. Poly to S-Rank (with soft pity)</div>
+    </div>
+  </div>
+</div>
+
+<div class="guide-section">
+  <h2>💰 Pull Currencies Explained</h2>
+  <table class="pity-table">
+    <tr><th>Currency</th><th>Used For</th><th>How to Get</th></tr>
+    <tr>
+      <td><strong>Polychrome</strong></td>
+      <td>Convert to Master Tapes (160:1)</td>
+      <td>Dailies, events, story, Hollow Zero, Shiyu Defense, codes</td>
+    </tr>
+    <tr>
+      <td><strong>Encrypted Master Tape</strong></td>
+      <td>Limited character/weapon banners</td>
+      <td>Convert from Polychrome, events, battle pass</td>
+    </tr>
+    <tr>
+      <td><strong>Master Tape</strong></td>
+      <td>Standard (Stable) banner only</td>
+      <td>Character ascension, battle pass, shop, events</td>
+    </tr>
+    <tr>
+      <td><strong>Boopon</strong></td>
+      <td>Bangboo banner only</td>
+      <td>Hollow Zero weeklies, events, shop</td>
+    </tr>
+    <tr>
+      <td><strong>Fading Signal (shop currency)</strong></td>
+      <td>Buy more Master/Encrypted Tapes</td>
+      <td>Earned automatically from pulling A-rank and S-rank dupes</td>
+    </tr>
+  </table>
+  <p><strong>Pro tip:</strong> Never convert Polychrome to Master Tapes (standard banner). Only convert to <strong>Encrypted</strong> Master Tapes for limited banners. The standard banner will naturally progress from free Master Tapes earned in-game.</p>
+</div>
+
+<div class="guide-section">
+  <h2>📊 F2P Polychrome Income</h2>
+  <h3>Per Patch (6 Weeks) — Recurring Sources</h3>
+  <ul>
+    <li><strong>Daily Commissions:</strong> 60/day × 42 days = ~2,520</li>
+    <li><strong>Hollow Zero (weekly):</strong> ~640/week × 6 = ~3,840</li>
+    <li><strong>Shiyu Defense (biweekly):</strong> 720/cycle × 3 = ~2,160</li>
+    <li><strong>Events (per patch):</strong> ~1,500–2,500</li>
+    <li><strong>Redeem Codes:</strong> ~300 per patch</li>
+    <li><strong>Inter-Knot Membership ($5/month):</strong> +90/day = +3,780 per patch</li>
+  </ul>
+  <p><strong>Total F2P per patch: ~12,000–15,000 Polychrome</strong> (enough for ~75–94 pulls)<br>
+  <strong>With $5 monthly pass: ~16,000–19,000 Polychrome</strong> (enough for ~100–118 pulls)</p>
+
+  <h3>One-Time Sources for New Players</h3>
+  <ul>
+    <li><strong>Main Story + Commissions:</strong> ~10,000–15,000</li>
+    <li><strong>Exploration &amp; Achievements:</strong> ~5,000–8,000</li>
+    <li><strong>Character Trials &amp; Tutorials:</strong> ~2,000–3,000</li>
+    <li><strong>First-Time Clear Rewards:</strong> ~3,000–5,000</li>
+  </ul>
+  <p><strong>New player one-time pool: ~30,000+ Polychrome.</strong> That is enough to guarantee at least one limited S-rank agent right away.</p>
+</div>
+
+<div class="guide-section">
+  <h2>🧠 Pull Strategy Tips</h2>
+  <h3>For Free-to-Play Players</h3>
+  <ul>
+    <li><strong>Never pull on a banner unless you can guarantee.</strong> Going in with less than ~22,000 Polychrome and losing 50/50 leaves you empty-handed.</li>
+    <li><strong>Wait for livestream before pulling.</strong> Current banners are always active during the preview. See the next patch's characters before spending on the current one.</li>
+    <li><strong>W-Engine banner is optional.</strong> For F2P, A-rank W-Engines and the battle pass weapon are competitive alternatives. Only pull W-Engines if you have spare pulls after securing your target agents.</li>
+    <li><strong>Supports age better than DPS.</strong> Top-tier supports (Sunna, Astra Yao, Yuzuha) stay relevant across many team compositions. A new DPS may be powercrept in 3–6 months.</li>
+    <li><strong>Build one team before a second.</strong> A hyper-invested 3-agent core can clear most content. Spreading resources across 6+ agents too early slows progress dramatically.</li>
+  </ul>
+  <h3>Pity Counter Tracking</h3>
+  <p>You can check your exact pity count in-game from the banner history page. Alternatively, use third-party trackers like <strong>zzz.rng.moe</strong> (community warp tracker) to log your pulls and visualize your pity progress.</p>
+</div>
+
+<div class="guide-cta">
+  <h2>Ready to Pull Smart?</h2>
+  <div class="guide-cta-grid">
+    <a href="/tier-list/" class="guide-cta-btn">📊 Check Tier List</a>
+    <a href="/guides/" class="guide-cta-btn alt">📖 Beginner's Guide</a>
+    <a href="/build-planner/" class="guide-cta-btn alt">🛠️ Build Planner</a>
+  </div>
+</div>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Database</h4>
+        <ul>
+          <li><a href="/agents/">Agents</a></li>
+          <li><a href="/w-engines/">W-Engines</a></li>
+          <li><a href="/drive-discs/">Drive Discs</a></li>
+          <li><a href="/bangboo/">Bangboo</a></li>
+          <li><a href="/tier-list/">Tier List</a></li>
+          <li><a href="/items/">Items</a></li>
+          <li><a href="/codes/">Redeem Codes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides &amp; Tools</h4>
+        <ul>
+          <li><a href="/guides/">Beginner&rsquo;s Guide</a></li>
+          <li><a href="/guides/gacha.html">Gacha &amp; Pity Guide</a></li>
+          <li><a href="/guides/download.html">Download <li><a href="/guides/download.html">Download &amp; Install</a></li>amp; Install</a></li><li><a href="/guides/time.html">Time Investment Guide</a></li>
+          <li><a href="/build-planner/">Build Planner</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ZZZ Database. Not affiliated with HoYoverse.</p>
+      <p style="font-size:11px;color:var(--text3);margin-top:4px">Data sourced from community wikis. Game assets &copy; HoYoverse.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('hb').addEventListener('click', function() {
+  document.getElementById('nl').classList.toggle('open');
+});
+</script>
+</body>
+</html>
