@@ -1,8 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "wutzone-zzz",
+  "name": "zzless",
   "compatibility_date": "2026-07-12",
   "observability": { "enabled": true },
   "pages_build_output_dir": ".",
-  "assets": { "directory": "." }
+  "assets": { "directory": "." },
+  "upload": { "exclude": [".git/**", ".wrangler/**", "node_modules/**"] }
 }
