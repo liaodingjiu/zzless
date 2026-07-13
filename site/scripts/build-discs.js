@@ -2,12 +2,12 @@
 /**
  * Build drive-discs sub-pages from discs-data.js
  * Generates 25 optimized detail pages with:
- *   - Type-specific icon (not generic 💿)
- *   - Breadcrumb navigation
+ *   - Type-specific icon + breadcrumb
+ *   - Prev/Next navigation (top + bottom)
  *   - Same-type related discs
- *   - Prev/Next disc navigation
- *   - Structured data (JSON-LD)
- *   - Proper canonical URLs
+ *   - Info panel (type, usage, farming)
+ *   - Mobile bottom nav bar (sticky)
+ *   - JSON-LD structured data
  */
 
 const fs = require('fs');
@@ -15,7 +15,7 @@ const path = require('path');
 
 const DISCS_DIR = path.resolve(__dirname, '..', 'drive-discs');
 
-// ── Data (mirrors discs-data.js) ──────────────────────────────────
+// ── Data ───────────────────────────────────────────────────────────
 const DISCS = [
   {"s":"astral-voice","n":"Astral Voice","type":"Support","p2":"ATK +10%","p4":"When anyone enters via Quick Assist, all squad members gain 1 stack of Astral (max 3, 15s). Each stack gives +8% DMG (max 24%)."},
   {"s":"branch-blade-song","n":"Branch & Blade Song","type":"Ice","p2":"CRIT DMG +16%","p4":"If Anomaly Mastery ≥115, CRIT DMG +30%. When anyone applies Freeze/Shatter, CRIT Rate +12% for 15s."},
@@ -44,7 +44,7 @@ const DISCS = [
   {"s":"yunkui-tales","n":"Yunkui Tales","type":"Support","p2":"HP +10%","p4":"EX Special, Chain Attack, or Ultimate grants CRIT Rate +4% per stack (max 3 stacks, 15s). At 3 stacks, Sheer DMG +10%."}
 ];
 
-// ── Type icons & badge colors ──────────────────────────────────────
+// ── Type metadata ───────────────────────────────────────────────────
 const TYPE_ICON = {
   Attack:"⚔️", Fire:"🔥", Ice:"❄️", Electric:"⚡", Physical:"💪",
   Ether:"✨", Stun:"💥", Support:"💚", Defense:"🛡️", Anomaly:"🌀"
@@ -57,13 +57,25 @@ const TYPE_BG = {
   Defense:"rgba(59,130,246,0.15)", Anomaly:"rgba(192,132,252,0.15)"
 };
 
-// ── Helpers ────────────────────────────────────────────────────────
 function esc(s) {
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 function sameType(disc) {
   return DISCS.filter(d => d.type === disc.type && d.s !== disc.s);
+}
+
+// ── Build a "quick jump by type" select ──────────────────────────────
+function buildTypeJump(currentType) {
+  const types = [...new Set(DISCS.map(d => d.type))].sort();
+  const options = types.map(t => {
+    const first = DISCS.find(d => d.type === t);
+    return `<option value=/drive-discs/${first.s}/ ${t === currentType ? 'selected' : ''}>${TYPE_ICON[t]||''} ${t}</option>`;
+  }).join('');
+  return `<select class=dd-jump-select onchange="if(this.value)location.href=this.value" aria-label="Jump to disc type">
+    <option value="">Jump to type...</option>
+    ${options}
+  </select>`;
 }
 
 // ── Template ───────────────────────────────────────────────────────
@@ -73,8 +85,9 @@ function buildPage(disc, idx) {
   const related = sameType(disc);
   const prev = idx > 0 ? DISCS[idx - 1] : null;
   const next = idx < DISCS.length - 1 ? DISCS[idx + 1] : null;
+  const typeJump = buildTypeJump(disc.type);
 
-  // Build same-type links
+  // Same-type chips
   let relatedHTML = '';
   if (related.length > 0) {
     const links = related.map(r =>
@@ -87,22 +100,23 @@ function buildPage(disc, idx) {
     </section>`;
   }
 
-  // Prev/Next navigation
-  let prevNextHTML = '';
-  if (prev || next) {
+  // Prev/Next
+  function pnNav(aria) {
     const prevLink = prev
       ? `<a href=/drive-discs/${prev.s}/ class=dd-pn-link>← ${TYPE_ICON[prev.type]||'💿'} ${esc(prev.n)}</a>`
       : '<span class=dd-pn-link style=opacity:0.3>← First</span>';
     const nextLink = next
       ? `<a href=/drive-discs/${next.s}/ class=dd-pn-link>${TYPE_ICON[next.type]||'💿'} ${esc(next.n)} →</a>`
       : '<span class=dd-pn-link style=opacity:0.3>Last →</span>';
-    prevNextHTML = `
-    <nav class=dd-pn-nav aria-label="Previous and next drive disc">
-      ${prevLink}
-      <span class=dd-pn-pos>${idx + 1} / ${DISCS.length}</span>
-      ${nextLink}
+    return `<nav class=dd-pn-nav aria-label="${aria}">
+      ${prevLink}<span class=dd-pn-pos>${idx + 1} / ${DISCS.length}</span>${nextLink}
     </nav>`;
   }
+
+  // All discs menu (for bottom bar)
+  const allDiscsOptions = DISCS.map((d, i) =>
+    `<option value=/drive-discs/${d.s}/ ${i === idx ? 'selected' : ''}>${TYPE_ICON[d.type]||''} ${esc(d.n)}</option>`
+  ).join('');
 
   return `<!DOCTYPE html>
 <html lang=en>
@@ -114,7 +128,7 @@ function buildPage(disc, idx) {
 <meta name=viewport content="width=device-width,initial-scale=1.0">
 <link rel=icon href=/favicon.svg>
 <title>${esc(disc.n)} — Drive Disc | ZZZ Database</title>
-<meta name=description content="${esc(disc.n)} — ${disc.type} Drive Disc Set. 2-Piece: ${esc(disc.p2)}">
+<meta name=description content="${esc(disc.n)} — ${disc.type} Drive Disc Set. 2-Piece: ${esc(disc.p2)}. 4-Piece: ${esc(disc.p4)}">
 <meta name=robots content=index,follow>
 <link rel=canonical href=https://zzless.com/drive-discs/${disc.s}/>
 <link rel=stylesheet href=/shared.css>
@@ -141,13 +155,32 @@ function buildPage(disc, idx) {
 .dd-rel-chips{display:flex;flex-wrap:wrap;gap:8px}
 .dd-rel-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(134,168,231,0.06);border:1px solid rgba(134,168,231,0.15);border-radius:20px;color:var(--text2);text-decoration:none;font-size:14px;transition:all .15s}
 .dd-rel-chip:hover{border-color:rgba(134,168,231,0.5);color:#fff;background:rgba(134,168,231,0.12)}
-.dd-d-back{margin-bottom:8px}
-.dd-d-back a{color:var(--accent);text-decoration:none;font-size:15px}
+/* Info grid */
+.dd-info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.dd-info-item{background:rgba(134,168,231,0.03);border-radius:8px;padding:12px 16px}
+.dd-info-item .dd-info-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;margin-bottom:4px}
+.dd-info-item .dd-info-val{font-size:15px;font-weight:600;color:var(--text)}
+/* Jump select */
+.dd-jump-bar{display:flex;gap:10px;align-items:center;margin-bottom:20px}
+.dd-jump-select{flex:1;padding:8px 12px;border:1px solid rgba(134,168,231,0.3);border-radius:12px;background:var(--surface);color:#fff;font-size:14px;cursor:pointer;max-width:280px}
+.dd-jump-select:focus{outline:none;border-color:#86a8e7}
+/* How to obtain */
+.dd-how-card{background:rgba(249,211,102,0.04);border-left:3px solid #F9D366;border-radius:0 12px 12px 0}
+/* Bottom bar */
+.dd-bottom-bar{position:sticky;bottom:0;z-index:50;background:var(--nav-bg);border-top:1px solid rgba(134,168,231,0.2);padding:10px 16px;display:flex;align-items:center;gap:10px;margin-top:32px}
+.dd-bottom-bar .dd-bb-back{color:var(--accent);text-decoration:none;font-size:14px;font-weight:500;white-space:nowrap}
+.dd-bottom-bar .dd-bb-back:hover{color:#fff}
+.dd-bottom-bar .dd-bb-select{flex:1;padding:8px 12px;border:1px solid rgba(134,168,231,0.3);border-radius:10px;background:var(--surface);color:#fff;font-size:14px;cursor:pointer;min-width:0}
+.dd-bottom-bar .dd-bb-select:focus{outline:none;border-color:#86a8e7}
 @media(max-width:600px){
   .dd-d-info h1{font-size:26px}
   .dd-d-icon{width:80px;height:80px;font-size:36px}
   .dd-pn-nav{flex-wrap:wrap;justify-content:center}
   .dd-pn-pos{order:-1;width:100%;text-align:center;margin-bottom:8px}
+  .dd-info-grid{grid-template-columns:1fr}
+  .dd-bottom-bar{padding:8px 10px;gap:6px}
+  .dd-bottom-bar .dd-bb-back{font-size:12px}
+  .dd-bottom-bar .dd-bb-select{font-size:13px;padding:6px 8px}
 }
 </style>
 <script type="application/ld+json">
@@ -155,7 +188,7 @@ function buildPage(disc, idx) {
   "@context":"https://schema.org",
   "@type":"WebPage",
   "name":"${esc(disc.n)} — Drive Disc Set",
-  "description":"${esc(disc.n)} — ${disc.type} Drive Disc Set. 2-Piece: ${esc(disc.p2)}",
+  "description":"${esc(disc.n)} — ${disc.type} Drive Disc Set. 2-Piece: ${esc(disc.p2)}. 4-Piece: ${esc(disc.p4)}",
   "url":"https://zzless.com/drive-discs/${disc.s}/",
   "isPartOf":{"@type":"WebSite","name":"ZZZ Database","url":"https://zzless.com"}
 }
@@ -182,11 +215,14 @@ function buildPage(disc, idx) {
 </div>
 </div>
 </nav>
-<main class=container style=max-width:800px>
+<main class=container style=max-width:800px;padding-bottom:90px>
 <nav class=dd-breadcrumb aria-label=Breadcrumb>
   <a href=/>Home</a> &rsaquo; <a href=/drive-discs/>Drive Discs</a> &rsaquo; <span>${esc(disc.n)}</span>
 </nav>
-${prevNextHTML}
+<div class=dd-jump-bar>
+  ${typeJump}
+</div>
+${pnNav("Previous and next drive disc")}
 <div class=dd-d-top>
 <div class=dd-d-icon aria-hidden=true>${icon}</div>
 <div class=dd-d-info>
@@ -202,9 +238,38 @@ ${prevNextHTML}
 <h2>4-Piece Bonus</h2>
 <div class=eff-text>${esc(disc.p4)}</div>
 </div>
+<div class=dd-d-section>
+<h2>Drive Disc Info</h2>
+<div class=dd-info-grid>
+<div class=dd-info-item><div class=dd-info-lbl>Type</div><div class=dd-info-val>${icon} ${disc.type}</div></div>
+<div class=dd-info-item><div class=dd-info-lbl>Set Bonus</div><div class=dd-info-val>2-Piece + 4-Piece</div></div>
+<div class=dd-info-item><div class=dd-info-lbl>Slot 1–3</div><div class=dd-info-val>HP / ATK / DEF (fixed)</div></div>
+<div class=dd-info-item><div class=dd-info-lbl>Slot 4–6</div><div class=dd-info-val>%Stats / DMG% / Utility (random)</div></div>
+</div>
+</div>
+<div class="dd-d-section dd-how-card">
+<h2>How to Obtain</h2>
+<div class=eff-text>
+Drive Discs are farmed from <strong>Routine Cleanup</strong> at Bardic Needle (unlocked at Inter-Knot Lv. 20). Use Battery Charge to claim rewards. Higher difficulty stages drop S-rank discs more frequently. You can also craft specific sets at the <strong>Music Store</strong> using disc materials dismantled from unwanted discs.
+</div>
+</div>
+<div class=dd-d-section>
+<h2>How Drive Discs Work</h2>
+<div class=eff-text>
+Each agent can equip 6 Drive Discs across 6 slots. Equipping <strong>2 discs from the same set</strong> activates the 2-Piece bonus. Equipping <strong>4 discs from the same set</strong> activates the 4-Piece bonus (stacks with the 2-Piece effect). A common strategy is <strong>4+2</strong> (one full set + one 2pc from another) or <strong>2+2+2</strong> (three different 2pc bonuses).
+</div>
+</div>
 ${relatedHTML}
-${prevNextHTML}
+${pnNav("Previous and next drive disc (bottom)")}
 </main>
+<!-- Sticky bottom bar -->
+<nav class=dd-bottom-bar aria-label="Drive disc quick navigation">
+  <a href=/drive-discs/ class=dd-bb-back>← All Discs</a>
+  <select class=dd-bb-select onchange="if(this.value)location.href=this.value" aria-label="Jump to any drive disc">
+    <option value="">Jump to disc...</option>
+    ${allDiscsOptions}
+  </select>
+</nav>
 <footer class=site-footer>
 <div class=footer-inner>
 <p>&copy; 2026 ZZZ Database. Not affiliated with HoYoverse.</p>
