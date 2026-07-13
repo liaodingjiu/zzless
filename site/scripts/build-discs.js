@@ -1,0 +1,239 @@
+#!/usr/bin/env node
+/**
+ * Build drive-discs sub-pages from discs-data.js
+ * Generates 25 optimized detail pages with:
+ *   - Type-specific icon (not generic 💿)
+ *   - Breadcrumb navigation
+ *   - Same-type related discs
+ *   - Prev/Next disc navigation
+ *   - Structured data (JSON-LD)
+ *   - Proper canonical URLs
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+const DISCS_DIR = path.resolve(__dirname, '..', 'drive-discs');
+
+// ── Data (mirrors discs-data.js) ──────────────────────────────────
+const DISCS = [
+  {"s":"astral-voice","n":"Astral Voice","type":"Support","p2":"ATK +10%","p4":"When anyone enters via Quick Assist, all squad members gain 1 stack of Astral (max 3, 15s). Each stack gives +8% DMG (max 24%)."},
+  {"s":"branch-blade-song","n":"Branch & Blade Song","type":"Ice","p2":"CRIT DMG +16%","p4":"If Anomaly Mastery ≥115, CRIT DMG +30%. When anyone applies Freeze/Shatter, CRIT Rate +12% for 15s."},
+  {"s":"bunny-in-wonderland","n":"Bunny in Wonderland","type":"Defense","p2":"HP +10%","p4":"When equipped by Defense character: EX Special or any Defensive/Evasive Assist grants all squad members DMG +6% (stacks up to 3 times, 25s)."},
+  {"s":"chaos-jazz","n":"Chaos Jazz","type":"Anomaly","p2":"Anomaly Proficiency +30","p4":"Fire & Electric DMG +15%. While off-field, EX Special & Assist Attack DMG +20%."},
+  {"s":"chaotic-metal","n":"Chaotic Metal","type":"Ether","p2":"Ether DMG +10%","p4":"CRIT DMG +20%. When anyone triggers Corruption, this further increases by 5.5% (stacking up to 6 times) for 8s."},
+  {"s":"dawns-bloom","n":"Dawn's Bloom","type":"Attack","p2":"Basic Attack DMG +15%","p4":"Basic Attack DMG +20%. If equipped by an Attack character, using EX Special/Ultimate further increases Basic Attack DMG by 20% for 25s."},
+  {"s":"fanged-metal","n":"Fanged Metal","type":"Physical","p2":"Physical DMG +10%","p4":"Whenever a squad member inflicts Assault, the equipper deals 35% increased DMG to the target for 12s."},
+  {"s":"freedom-blues","n":"Freedom Blues","type":"Anomaly","p2":"Anomaly Proficiency +30","p4":"EX Special Attack hits reduce target Anomaly Buildup RES to equipper attribute by 20% for 8s."},
+  {"s":"hormone-punk","n":"Hormone Punk","type":"Attack","p2":"ATK +10%","p4":"Upon entering combat or switching in, ATK increases by 25% for 10s (once every 20s)."},
+  {"s":"inferno-metal","n":"Inferno Metal","type":"Fire","p2":"Fire DMG +10%","p4":"CRIT Rate +28% for 8s upon hitting a Burning enemy."},
+  {"s":"king-of-summit","n":"King of the Summit","type":"Stun","p2":"Daze of attacks +6%","p4":"When equipped by Stun character: EX Special/Chain Attack increases all squad members CRIT DMG by 15%. If CRIT Rate ≥50%, +15% CRIT DMG."},
+  {"s":"moonlight-lullaby","n":"Moonlight Lullaby","type":"Support","p2":"Energy Regen +20%","p4":"When equipped by Support character: EX Special/Ultimate increases all squad members DMG by 18% for 25s."},
+  {"s":"notes-from-chained","n":"Notes from the Chained","type":"Anomaly","p2":"Ice DMG +10%","p4":"Triggering Abloom: Anomaly Proficiency +48 for 30s. Triggering Freeze: Attribute Anomaly DMG & Disorder DMG +16% for 30s."},
+  {"s":"phaethons-melody","n":"Phaethon's Melody","type":"Anomaly","p2":"Anomaly Mastery +8%","p4":"When any squad member uses EX Special, equipper Anomaly Proficiency +45 for 8s. If not the equipper, Ether DMG +25%."},
+  {"s":"polar-metal","n":"Polar Metal","type":"Ice","p2":"Ice DMG +10%","p4":"Basic & Dash Attack DMG +20%. Increases by an additional 20% for 12s when anyone inflicts Freeze/Shatter."},
+  {"s":"proto-punk","n":"Proto Punk","type":"Support","p2":"Shield Effect +15%","p4":"When anyone triggers Defensive Assist or Evasive Assist, all squad members deal 15% increased DMG for 10s."},
+  {"s":"puffer-electro","n":"Puffer Electro","type":"Attack","p2":"PEN Ratio +8%","p4":"Ultimate DMG +20%. Launching an Ultimate increases ATK by 15% for 12s."},
+  {"s":"shadow-harmony","n":"Shadow Harmony","type":"Attack","p2":"Aftershock & Dash Attack DMG +15%","p4":"Hitting with Aftershock/Dash Attack (matching attribute) grants ATK +4% & CRIT Rate +4%, up to 3 stacks for 15s."},
+  {"s":"shining-aria","n":"Shining Aria","type":"Anomaly","p2":"Ether DMG +10%","p4":"Basic Attack hits grant Anomaly Proficiency +36 for 8s. When any enemy is Stunned, DMG +25% for 18s."},
+  {"s":"shockstar-disco","n":"Shockstar Disco","type":"Stun","p2":"Impact +6%","p4":"Basic Attacks, Dash Attacks, and Dodge Counters inflict 20% more Daze on the main target."},
+  {"s":"soul-rock","n":"Soul Rock","type":"Defense","p2":"DEF +16%","p4":"Upon taking HP damage, the equipper takes 40% less DMG for 2.5s (once every 15s)."},
+  {"s":"swing-jazz","n":"Swing Jazz","type":"Support","p2":"Energy Regen +20%","p4":"Chain Attack or Ultimate increases all squad members DMG by 15% for 12s (does not stack)."},
+  {"s":"thunder-metal","n":"Thunder Metal","type":"Electric","p2":"Electric DMG +10%","p4":"ATK +28% as long as an enemy is Shocked."},
+  {"s":"woodpecker-electro","n":"Woodpecker Electro","type":"Attack","p2":"CRIT Rate +8%","p4":"Landing a crit with Basic Attack, Dodge Counter, or EX Special increases ATK by 9% for 6s (separate timers per skill)."},
+  {"s":"yunkui-tales","n":"Yunkui Tales","type":"Support","p2":"HP +10%","p4":"EX Special, Chain Attack, or Ultimate grants CRIT Rate +4% per stack (max 3 stacks, 15s). At 3 stacks, Sheer DMG +10%."}
+];
+
+// ── Type icons & badge colors ──────────────────────────────────────
+const TYPE_ICON = {
+  Attack:"⚔️", Fire:"🔥", Ice:"❄️", Electric:"⚡", Physical:"💪",
+  Ether:"✨", Stun:"💥", Support:"💚", Defense:"🛡️", Anomaly:"🌀"
+};
+const TYPE_BG = {
+  Attack:"rgba(239,68,68,0.15)", Fire:"rgba(249,115,22,0.15)",
+  Ice:"rgba(147,197,253,0.15)", Electric:"rgba(192,132,252,0.15)",
+  Physical:"rgba(250,204,21,0.15)", Ether:"rgba(232,121,249,0.15)",
+  Stun:"rgba(239,68,68,0.15)", Support:"rgba(34,197,94,0.15)",
+  Defense:"rgba(59,130,246,0.15)", Anomaly:"rgba(192,132,252,0.15)"
+};
+
+// ── Helpers ────────────────────────────────────────────────────────
+function esc(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function sameType(disc) {
+  return DISCS.filter(d => d.type === disc.type && d.s !== disc.s);
+}
+
+// ── Template ───────────────────────────────────────────────────────
+function buildPage(disc, idx) {
+  const icon = TYPE_ICON[disc.type] || '💿';
+  const bg = TYPE_BG[disc.type] || 'rgba(134,168,231,0.1)';
+  const related = sameType(disc);
+  const prev = idx > 0 ? DISCS[idx - 1] : null;
+  const next = idx < DISCS.length - 1 ? DISCS[idx + 1] : null;
+
+  // Build same-type links
+  let relatedHTML = '';
+  if (related.length > 0) {
+    const links = related.map(r =>
+      `<a href=/drive-discs/${r.s}/ class=dd-rel-chip>${TYPE_ICON[r.type]||'💿'} ${esc(r.n)}</a>`
+    ).join('');
+    relatedHTML = `
+    <section class=dd-d-section>
+      <h2>Other ${disc.type} Drive Discs</h2>
+      <div class=dd-rel-chips>${links}</div>
+    </section>`;
+  }
+
+  // Prev/Next navigation
+  let prevNextHTML = '';
+  if (prev || next) {
+    const prevLink = prev
+      ? `<a href=/drive-discs/${prev.s}/ class=dd-pn-link>← ${TYPE_ICON[prev.type]||'💿'} ${esc(prev.n)}</a>`
+      : '<span class=dd-pn-link style=opacity:0.3>← First</span>';
+    const nextLink = next
+      ? `<a href=/drive-discs/${next.s}/ class=dd-pn-link>${TYPE_ICON[next.type]||'💿'} ${esc(next.n)} →</a>`
+      : '<span class=dd-pn-link style=opacity:0.3>Last →</span>';
+    prevNextHTML = `
+    <nav class=dd-pn-nav aria-label="Previous and next drive disc">
+      ${prevLink}
+      <span class=dd-pn-pos>${idx + 1} / ${DISCS.length}</span>
+      ${nextLink}
+    </nav>`;
+  }
+
+  return `<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=UTF-8>
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel=stylesheet>
+<meta name=viewport content="width=device-width,initial-scale=1.0">
+<link rel=icon href=/favicon.svg>
+<title>${esc(disc.n)} — Drive Disc | ZZZ Database</title>
+<meta name=description content="${esc(disc.n)} — ${disc.type} Drive Disc Set. 2-Piece: ${esc(disc.p2)}">
+<meta name=robots content=index,follow>
+<link rel=canonical href=https://zzless.com/drive-discs/${disc.s}/>
+<link rel=stylesheet href=/shared.css>
+<style>
+.dd-d-top{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:24px;align-items:center}
+.dd-d-icon{width:120px;height:120px;border-radius:50%;background:${bg};display:flex;align-items:center;justify-content:center;font-size:56px;border:2px solid rgba(134,168,231,0.3);flex-shrink:0}
+.dd-d-info{flex:1;min-width:280px}
+.dd-d-info h1{font-size:36px;font-weight:700}
+.dd-d-type{font-size:14px;color:#86a8e7;margin:8px 0}
+.dd-d-section{background:var(--surface);border:1px solid rgba(134,168,231,0.12);border-radius:12px;padding:22px;margin-bottom:16px}
+.dd-d-section h2{font-size:18px;font-weight:600;margin-bottom:12px;color:#86a8e7}
+.dd-d-section .eff-text{font-size:15px;color:#8899aa;line-height:1.7}
+/* Breadcrumb */
+.dd-breadcrumb{margin-bottom:16px;font-size:13px;color:var(--text3)}
+.dd-breadcrumb a{color:var(--accent);text-decoration:none}
+.dd-breadcrumb a:hover{text-decoration:underline}
+.dd-breadcrumb span{color:var(--text2)}
+/* Prev/Next nav */
+.dd-pn-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px;padding:16px 0;border-top:1px solid rgba(134,168,231,0.1)}
+.dd-pn-link{color:var(--accent);text-decoration:none;font-size:14px;font-weight:500;transition:color .15s}
+.dd-pn-link:hover{color:#fff}
+.dd-pn-pos{font-size:13px;color:var(--text3)}
+/* Related chips */
+.dd-rel-chips{display:flex;flex-wrap:wrap;gap:8px}
+.dd-rel-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;background:rgba(134,168,231,0.06);border:1px solid rgba(134,168,231,0.15);border-radius:20px;color:var(--text2);text-decoration:none;font-size:14px;transition:all .15s}
+.dd-rel-chip:hover{border-color:rgba(134,168,231,0.5);color:#fff;background:rgba(134,168,231,0.12)}
+.dd-d-back{margin-bottom:8px}
+.dd-d-back a{color:var(--accent);text-decoration:none;font-size:15px}
+@media(max-width:600px){
+  .dd-d-info h1{font-size:26px}
+  .dd-d-icon{width:80px;height:80px;font-size:36px}
+  .dd-pn-nav{flex-wrap:wrap;justify-content:center}
+  .dd-pn-pos{order:-1;width:100%;text-align:center;margin-bottom:8px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebPage",
+  "name":"${esc(disc.n)} — Drive Disc Set",
+  "description":"${esc(disc.n)} — ${disc.type} Drive Disc Set. 2-Piece: ${esc(disc.p2)}",
+  "url":"https://zzless.com/drive-discs/${disc.s}/",
+  "isPartOf":{"@type":"WebSite","name":"ZZZ Database","url":"https://zzless.com"}
+}
+</script>
+<script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xl629udfvo");</script>
+</head>
+<body>
+<nav aria-label="Main navigation">
+<div class=nav-inner>
+<a href=/ class=logo>ZZZ<span>DB</span></a>
+<button class=hamburger id=hb aria-label=Menu>☰</button>
+<div class=nav-right>
+<ul class=nav-links id=nl>
+<li><a href=/tier-list/>Tier List</a></li>
+<li><a href=/agents/>Agents</a></li>
+<li><a href=/w-engines/>W-Engines</a></li>
+<li><a href=/drive-discs/>Drive Discs</a></li>
+<li><a href=/bangboo/>Bangboo</a></li>
+<li><a href=/build-planner/ class=nav-highlight>Builder</a></li>
+<li><a href=/codes/>Codes</a></li>
+<li><a href=/items/>Items</a></li>
+</ul>
+<button class=theme-toggle>EN ▾</button>
+</div>
+</div>
+</nav>
+<main class=container style=max-width:800px>
+<nav class=dd-breadcrumb aria-label=Breadcrumb>
+  <a href=/>Home</a> &rsaquo; <a href=/drive-discs/>Drive Discs</a> &rsaquo; <span>${esc(disc.n)}</span>
+</nav>
+${prevNextHTML}
+<div class=dd-d-top>
+<div class=dd-d-icon aria-hidden=true>${icon}</div>
+<div class=dd-d-info>
+<h1>${esc(disc.n)}</h1>
+<div class=dd-d-type>${disc.type} Drive Disc Set</div>
+</div>
+</div>
+<div class=dd-d-section>
+<h2>2-Piece Bonus</h2>
+<div class=eff-text>${esc(disc.p2)}</div>
+</div>
+<div class=dd-d-section>
+<h2>4-Piece Bonus</h2>
+<div class=eff-text>${esc(disc.p4)}</div>
+</div>
+${relatedHTML}
+${prevNextHTML}
+</main>
+<footer class=site-footer>
+<div class=footer-inner>
+<p>&copy; 2026 ZZZ Database. Not affiliated with HoYoverse.</p>
+<div class=footer-links>
+<a href=/privacy.html>Privacy</a><a href=/terms.html>Terms</a><a href=/contact.html>Contact</a>
+</div>
+</div>
+</footer>
+<script>document.getElementById("hb").addEventListener("click",function(){document.getElementById("nl").classList.toggle("open")});</script>
+</body>
+</html>`;
+}
+
+// ── Main ───────────────────────────────────────────────────────────
+let built = 0;
+
+for (let i = 0; i < DISCS.length; i++) {
+  const disc = DISCS[i];
+  const dir = path.join(DISCS_DIR, disc.s);
+  const file = path.join(dir, 'index.html');
+
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+
+  const html = buildPage(disc, i);
+  fs.writeFileSync(file, html, 'utf-8');
+  built++;
+  console.log(`  ✓ ${disc.s}`);
+}
+
+console.log(`\nBuilt ${built} drive disc pages.`);
