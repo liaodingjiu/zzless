@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>ZZZ Best Teams — Top Team Compositions (Patch 3.0) | ZZZ Database</title>
+<meta name="description" content="The best Zenless Zone Zero team compositions for every element and playstyle. Meta team comps, F2P budget teams, Disorder teams, and role-based squad building guide.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://zzless.com/best-teams/">
+<meta property="og:title" content="ZZZ Best Teams — Top Team Compositions (Patch 3.0) | ZZZ Database">
+<meta property="og:description" content="Best ZZZ team comps for every element, role, and budget. Meta teams, F2P options, and squad building guide.">
+<meta property="og:image" content="https://zzless.com/favicon.svg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zzless.com/best-teams/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ZZZ Best Teams — Top Team Compositions | ZZZ Database">
+<meta name="twitter:description" content="Meta team comps, F2P budget teams, Disorder teams, and role-based squad building guide.">
+<meta name="twitter:image" content="https://zzless.com/favicon.svg">
+<link rel="stylesheet" href="/shared.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+.bt-container{max-width:800px;margin:0 auto;padding:24px 20px 100px}
+.bt-bc{font-size:13px;color:var(--text3);margin-bottom:20px}
+.bt-bc a{color:var(--accent);text-decoration:none}
+.bt-bc a:hover{text-decoration:underline}
+.bt-hero h1{font-size:38px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px}
+.bt-hero h1 span{color:#F9D366}
+.bt-hero .bt-sub{font-size:14px;color:var(--text2);margin-bottom:20px;line-height:1.6}
+.bt-hero .bt-updated{display:inline-block;padding:4px 12px;background:rgba(134,168,231,0.1);border-radius:8px;font-size:12px;color:var(--accent);margin-bottom:24px}
+
+/* Section card */
+.bt-sec{background:var(--surface);border:1px solid rgba(134,168,231,0.10);border-radius:14px;padding:28px;margin-bottom:20px}
+.bt-sec h2{font-size:18px;font-weight:600;margin-bottom:14px;color:var(--accent);display:flex;align-items:center;gap:8px}
+.bt-sec p{font-size:14px;color:var(--text2);line-height:1.9;margin-bottom:10px}
+
+/* Team card */
+.bt-team{background:rgba(134,168,231,0.03);border:1px solid rgba(134,168,231,0.08);border-radius:12px;padding:20px;margin-bottom:14px}
+.bt-team h3{font-size:16px;font-weight:600;color:#F9D366;margin-bottom:6px}
+.bt-team .bt-roles{font-size:13px;color:var(--text2);margin-bottom:8px}
+.bt-team .bt-members{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.bt-team .bt-member{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(134,168,231,0.06);border:1px solid rgba(134,168,231,0.15);border-radius:20px;font-size:13px;text-decoration:none;color:var(--text);transition:all .15s}
+.bt-team .bt-member:hover{border-color:var(--accent);background:rgba(134,168,231,0.12);color:#fff}
+.bt-team .bt-member .bt-rank{font-size:10px;padding:1px 5px;border-radius:3px;font-weight:700}
+.bt-rank-s{color:#F9D366}.bt-rank-a{color:#c084fc}
+.bt-team .bt-desc{font-size:13px;color:var(--text2);line-height:1.8}
+.bt-team .bt-budget{display:inline-block;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600;margin-top:8px}
+.bt-meta{background:rgba(249,211,102,0.1);color:#F9D366;border:1px solid rgba(249,211,102,0.2)}
+.bt-f2p{background:rgba(34,197,94,0.1);color:#22c55e;border:1px solid rgba(34,197,94,0.2)}
+.bt-premium{background:rgba(192,132,252,0.1);color:#c084fc;border:1px solid rgba(192,132,252,0.2)}
+
+/* TOC */
+.bt-toc{background:var(--surface);border:1px solid rgba(134,168,231,0.12);border-radius:12px;padding:20px 24px;margin-bottom:24px}
+.bt-toc h2{font-size:16px;font-weight:600;color:var(--accent);margin-bottom:10px}
+.bt-toc ol{padding-left:20px;font-size:14px;color:var(--text2);line-height:2.2}
+.bt-toc ol a{color:var(--accent);text-decoration:none}
+.bt-toc ol a:hover{text-decoration:underline}
+
+/* FAQ */
+.bt-faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.bt-faq-item{background:rgba(134,168,231,0.03);border-radius:10px;padding:16px}
+.bt-faq-item .bt-fq{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px}
+.bt-faq-item .bt-fa{font-size:13px;color:var(--text2);line-height:1.7}
+.bt-faq-item .bt-fa a{color:var(--accent);text-decoration:none}
+.bt-faq-item .bt-fa a:hover{text-decoration:underline}
+
+/* CTA */
+.bt-cta{text-align:center;border-left:3px solid #F9D366;border-radius:0 14px 14px 0}
+.bt-btn{display:inline-block;padding:12px 24px;background:var(--accent);color:#fff!important;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;transition:background .15s}
+.bt-btn:hover{background:#9bbaf0}
+
+@media(max-width:600px){
+  .bt-hero h1{font-size:28px}
+  .bt-faq-grid{grid-template-columns:1fr}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ZZZ Best Teams — Top Team Compositions (Patch 3.0)","description":"The best Zenless Zone Zero team compositions for every element and playstyle. Meta team comps, F2P budget teams, Disorder teams, and role-based squad building guide.","url":"https://zzless.com/best-teams/","datePublished":"2026-07-18","dateModified":"2026-07-18","isPartOf":{"@type":"WebSite","name":"ZZZ Database","url":"https://zzless.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://zzless.com/"},{"@type":"ListItem","position":2,"name":"Best Teams"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best team composition in ZZZ?","acceptedAnswer":{"@type":"Answer","text":"The current top meta team is Miyabi (Ice Anomaly) + Yanagi (Electric Anomaly) + Sunna (Physical Support). This Disorder team triggers continuous elemental reactions for massive damage. Other top teams include Aria + Nangong Yu + Astra Yao for Ether dominance, and Ye Shunguang + Caesar King + Sunna for Physical hyper carry."}},{"@type":"Question","name":"What is the best F2P team for beginners?","acceptedAnswer":{"@type":"Answer","text":"Pyrois + Norma + Nicole is the best F2P beginner team — Pyrois is a free S-Rank from the story, Norma is a strong A-Rank stunner, and Nicole provides Ether support and grouping. All three are easily obtainable without spending Polychrome."}},{"@type":"Question","name":"How do I build a good team in ZZZ?","acceptedAnswer":{"@type":"Answer","text":"A standard team has three roles: Main DPS (Attack/Anomaly), Stunner (to build Daze), and Support (to buff damage). The core principle is matching elements and having one on-field carry. For Disorder teams, pair two Anomaly agents of different elements. For hyper carry teams, build around one strong DPS with a Stun and Support."}},{"@type":"Question","name":"How many teams do I need for endgame?","acceptedAnswer":{"@type":"Answer","text":"Shiyu Defense requires two full teams of 3 agents each (6 agents minimum). Hollow Zero endgame benefits from 2-3 built teams. Focus on building one strong team first, then a second team with different element coverage to handle enemy resistances."}}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1ESN49R4Q4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-1ESN49R4Q4");</script><script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xl629udfvo");</script>
+</head>
+<body>
+
+<nav aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="logo">ZZZ<span>DB</span></a>
+    <button class="hamburger" id="hb" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <ul class="nav-links" id="nl">
+        <li><a href="/tier-list/">Tier List</a></li>
+        <li><a href="/agents/">Agents</a></li>
+        <li><a href="/w-engines/">W-Engines</a></li>
+        <li><a href="/drive-discs/">Drive Discs</a></li>
+        <li><a href="/bangboo/">Bangboo</a></li>
+        <li><a href="/build-planner/" class="nav-highlight">Builder</a></li>
+        <li><a href="/codes/">Codes</a></li>
+        <li><a href="/items/">Items</a></li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+<main class="bt-container">
+  <nav class="bt-bc" aria-label="Breadcrumb">
+    <a href="/">Home</a> &ensp;›&ensp; <span>Best Teams</span>
+  </nav>
+
+  <section class="bt-hero">
+    <h1>Zenless Zone Zero <span>Best Teams</span></h1>
+    <p class="bt-sub">Top meta team compositions for every element and playstyle — from F2P budget squads to premium Disorder teams. Updated for Patch 3.0.</p>
+    <span class="bt-updated">📢 Updated: July 2026 (Patch 3.0)</span>
+  </section>
+
+  <!-- Table of Contents -->
+  <nav class="bt-toc" aria-label="Table of Contents">
+    <h2>📑 On This Page</h2>
+    <ol>
+      <li><a href="#meta">🏆 Meta Teams (S-Tier)</a></li>
+      <li><a href="#f2p">🌱 Best F2P / Beginner Teams</a></li>
+      <li><a href="#disorder">🌀 Disorder Teams (Dual Anomaly)</a></li>
+      <li><a href="#hypercarry">⚔️ Hyper Carry Teams</a></li>
+      <li><a href="#element">🔥 Element-Specific Teams</a></li>
+      <li><a href="#how-to-build">🛠️ How to Build a Team</a></li>
+      <li><a href="#faq">❓ Team Building FAQ</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1. Meta Teams -->
+  <section id="meta">
+    <div class="bt-sec">
+      <h2>🏆 Meta Teams (S-Tier)</h2>
+      <p>These are the strongest team compositions in the current meta. They combine top-tier agents with perfect synergy for maximum damage output.</p>
+
+      <div class="bt-team">
+        <h3>❄️ Miyabi Disorder</h3>
+        <div class="bt-roles">Disorder • Dual Anomaly • Ice + Electric</div>
+        <div class="bt-members">
+          <a href="/agents/miyabi/" class="bt-member">❄️ Miyabi <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/yanagi/" class="bt-member">⚡ Yanagi <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/sunna/" class="bt-member">💪 Sunna <span class="bt-rank bt-rank-s">S</span></a>
+        </div>
+        <p class="bt-desc">The undisputed #1 team. Miyabi and Yanagi chain Freeze → Shock → Disorder for massive burst windows. Sunna provides ATK buffs and Physical coverage. This team clears all content effortlessly.</p>
+        <span class="bt-budget bt-premium">Premium (3× S-Rank)</span>
+      </div>
+
+      <div class="bt-team">
+        <h3>✨ Ether Dominance</h3>
+        <div class="bt-roles">Hyper Carry • Ether • Stun + Support</div>
+        <div class="bt-members">
+          <a href="/agents/aria/" class="bt-member">✨ Aria <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/nangong-yu/" class="bt-member">✨ Nangong Yu <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/astra-yao/" class="bt-member">✨ Astra Yao <span class="bt-rank bt-rank-s">S</span></a>
+        </div>
+        <p class="bt-desc">Full Ether synergy. Nangong Yu stuns → Aria unloads during Chain Attack windows → Astra Yao buffs both. Corruption DoT adds consistent background damage. Few enemies resist Ether, making this comp universally effective.</p>
+        <span class="bt-budget bt-premium">Premium (3× S-Rank)</span>
+      </div>
+
+      <div class="bt-team">
+        <h3>💪 Physical Hyper Carry</h3>
+        <div class="bt-roles">Hyper Carry • Physical • DPS + Defense + Support</div>
+        <div class="bt-members">
+          <a href="/agents/ye-shunguang/" class="bt-member">💪 Ye Shunguang <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/caesar-king/" class="bt-member">💪 Caesar King <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/sunna/" class="bt-member">💪 Sunna <span class="bt-rank bt-rank-s">S</span></a>
+        </div>
+        <p class="bt-desc">Ye Shunguang deals devastating Physical damage with Caesar King providing shields and Sunna amplifying ATK. Safe and consistent — Caesar King's shields let you facetank while Ye Shunguang tears through enemies.</p>
+        <span class="bt-budget bt-premium">Premium (3× S-Rank)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. F2P Teams -->
+  <section id="f2p">
+    <div class="bt-sec">
+      <h2>🌱 Best F2P / Beginner Teams</h2>
+      <p>These teams use freely obtainable or A-Rank agents. They're easy to build and can clear most content without spending a single Polychrome.</p>
+
+      <div class="bt-team">
+        <h3>⭐ Pyrois Starter Team</h3>
+        <div class="bt-roles">Balanced • Fire + Ether • DPS + Stun + Support</div>
+        <div class="bt-members">
+          <a href="/agents/soldier-11/" class="bt-member">🔥 Pyrois (Soldier 11) <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/anby-demara/" class="bt-member">⚡ Norma <span class="bt-rank bt-rank-a">A</span></a>
+          <a href="/agents/nicole-demara/" class="bt-member">✨ Nicole <span class="bt-rank bt-rank-a">A</span></a>
+        </div>
+        <p class="bt-desc"><strong>The #1 F2P recommendation.</strong> Pyrois is free from the main story. Norma (Anby) is a starter stunner who builds Daze reliably. Nicole groups enemies and provides DEF shred. All three are given to you — zero pulls needed.</p>
+        <span class="bt-budget bt-f2p">F2P Friendly</span>
+      </div>
+
+      <div class="bt-team">
+        <h3>🔥 Budget Fire Team</h3>
+        <div class="bt-roles">Fire • DPS + Stun + Support</div>
+        <div class="bt-members">
+          <a href="/agents/soldier-11/" class="bt-member">🔥 Soldier 11 <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/koleda/" class="bt-member">🔥 Koleda <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/lucy/" class="bt-member">🔥 Lucy <span class="bt-rank bt-rank-a">A</span></a>
+        </div>
+        <p class="bt-desc">Classic Fire comp. Soldier 11 and Koleda are both in the standard banner pool (lose 50/50 or 300-pull selector). Lucy is an A-Rank who buffs ATK for the whole team. Consistent and easy to play.</p>
+        <span class="bt-budget bt-meta">Standard Banner</span>
+      </div>
+
+      <div class="bt-team">
+        <h3>⚡ Budget Electric Team</h3>
+        <div class="bt-roles">Electric • DPS + Stun + Support</div>
+        <div class="bt-members">
+          <a href="/agents/anton/" class="bt-member">⚡ Anton <span class="bt-rank bt-rank-a">A</span></a>
+          <a href="/agents/anby-demara/" class="bt-member">⚡ Anby <span class="bt-rank bt-rank-a">A</span></a>
+          <a href="/agents/rina/" class="bt-member">⚡ Rina <span class="bt-rank bt-rank-s">S</span></a>
+        </div>
+        <p class="bt-desc">Full A-Rank DPS core with Anton + Anby. Rina is a standard S-Rank support who buffs PEN Ratio — if you lose 50/50 to her, this team becomes very strong. Can substitute Nicole if you don't have Rina.</p>
+        <span class="bt-budget bt-f2p">F2P Friendly</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Disorder Teams -->
+  <section id="disorder">
+    <div class="bt-sec">
+      <h2>🌀 Disorder Teams (Dual Anomaly)</h2>
+      <p>Disorder is triggered when a second Attribute Anomaly is applied before the first expires. These teams pair two Anomaly agents of different elements for massive chain reactions.</p>
+
+      <div class="bt-team">
+        <h3>⚡🔥 Electric × Fire Disorder</h3>
+        <div class="bt-roles">Disorder • Electric + Fire • Dual Anomaly</div>
+        <div class="bt-members">
+          <a href="/agents/yanagi/" class="bt-member">⚡ Yanagi <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/burnice/" class="bt-member">🔥 Burnice <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/lucy/" class="bt-member">🔥 Lucy <span class="bt-rank bt-rank-a">A</span></a>
+        </div>
+        <p class="bt-desc">Yanagi builds Electric anomaly rapidly while Burnice applies Burn. Disorder triggers between Shock and Burn for continuous damage spikes. Lucy provides ATK buff for both DPS units.</p>
+        <span class="bt-budget bt-premium">Premium (2× S-Rank + 1× A-Rank)</span>
+      </div>
+
+      <div class="bt-team">
+        <h3>💪❄️ Physical × Ice Disorder</h3>
+        <div class="bt-roles">Disorder • Physical + Ice • Dual Anomaly</div>
+        <div class="bt-members">
+          <a href="/agents/jane-doe/" class="bt-member">💪 Jane Doe <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/miyabi/" class="bt-member">❄️ Miyabi <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/soukaku/" class="bt-member">❄️ Soukaku <span class="bt-rank bt-rank-a">A</span></a>
+        </div>
+        <p class="bt-desc">Jane Doe's Assault + Miyabi's Freeze = constant Disorder procs. Soukaku buffs Ice DMG and ATK. Miyabi acts as the primary on-field carry with Jane Doe swapping in to apply Physical anomaly.</p>
+        <span class="bt-budget bt-premium">Premium (2× S-Rank + 1× A-Rank)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Hyper Carry Teams -->
+  <section id="hypercarry">
+    <div class="bt-sec">
+      <h2>⚔️ Hyper Carry Teams</h2>
+      <p>Hyper carry teams funnel all resources into one main DPS. The Stunner sets up damage windows, and the Support amplifies the carry's output.</p>
+
+      <div class="bt-team">
+        <h3>❄️ Ellen Ice Hyper</h3>
+        <div class="bt-roles">Hyper Carry • Ice • DPS + Stun + Support</div>
+        <div class="bt-members">
+          <a href="/agents/ellen-joe/" class="bt-member">❄️ Ellen Joe <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/von-lycaon/" class="bt-member">❄️ Von Lycaon <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/soukaku/" class="bt-member">❄️ Soukaku <span class="bt-rank bt-rank-a">A</span></a>
+        </div>
+        <p class="bt-desc">Mono-Ice hyper carry. Von Lycaon stuns → Soukaku buffs → Ellen unloads during the stun window. Full Ice synergy means all buffs and debuffs amplify each other.</p>
+        <span class="bt-budget bt-meta">Meta (2× S-Rank + 1× A-Rank)</span>
+      </div>
+
+      <div class="bt-team">
+        <h3>⚡ Harumasa Electric Hyper</h3>
+        <div class="bt-roles">Hyper Carry • Electric • DPS + Stun + Support</div>
+        <div class="bt-members">
+          <a href="/agents/harumasa/" class="bt-member">⚡ Harumasa <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/qingyi/" class="bt-member">⚡ Qingyi <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/rina/" class="bt-member">⚡ Rina <span class="bt-rank bt-rank-s">S</span></a>
+        </div>
+        <p class="bt-desc">Harumasa deals massive single-target Electric damage. Qingyi builds Daze quickly, and Rina buffs PEN Ratio for Harumasa's piercing attacks. Excellent against bosses and elite enemies.</p>
+        <span class="bt-budget bt-premium">Premium (3× S-Rank)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Element Teams -->
+  <section id="element">
+    <div class="bt-sec">
+      <h2>🔥 Element-Specific Teams</h2>
+
+      <div class="bt-team">
+        <h3>🔥 Fire Team</h3>
+        <div class="bt-members">
+          <a href="/agents/soldier-11/" class="bt-member">🔥 Soldier 11 <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/koleda/" class="bt-member">🔥 Koleda <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/lucy/" class="bt-member">🔥 Lucy <span class="bt-rank bt-rank-a">A</span></a>
+        </div>
+        <p class="bt-desc">Replace Soldier 11 with <a href="/agents/evelyn/">Evelyn</a> or <a href="/agents/burnice/">Burnice</a> for variant comps. Best against Ice-weak enemies.</p>
+      </div>
+
+      <div class="bt-team">
+        <h3>❄️ Ice Team</h3>
+        <div class="bt-members">
+          <a href="/agents/ellen-joe/" class="bt-member">❄️ Ellen <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/von-lycaon/" class="bt-member">❄️ Lycaon <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/soukaku/" class="bt-member">❄️ Soukaku <span class="bt-rank bt-rank-a">A</span></a>
+        </div>
+        <p class="bt-desc">Replace Ellen with <a href="/agents/miyabi/">Miyabi</a> for the #1 meta variant. Best against Fire-weak enemies.</p>
+      </div>
+
+      <div class="bt-team">
+        <h3>✨ Ether Team</h3>
+        <div class="bt-members">
+          <a href="/agents/aria/" class="bt-member">✨ Aria <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/nangong-yu/" class="bt-member">✨ Nangong Yu <span class="bt-rank bt-rank-s">S</span></a>
+          <a href="/agents/nicole-demara/" class="bt-member">✨ Nicole <span class="bt-rank bt-rank-a">A</span></a>
+        </div>
+        <p class="bt-desc">Universal coverage — few enemies resist Ether. Replace Nicole with <a href="/agents/astra-yao/">Astra Yao</a> for the premium variant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. How to Build -->
+  <section id="how-to-build">
+    <div class="bt-sec">
+      <h2>🛠️ How to Build a Team in ZZZ</h2>
+      <p><strong>1. Pick your Main DPS.</strong> This is your on-field carry who deals the most damage. Choose based on your roster and the enemies' elemental weaknesses.</p>
+      <p><strong>2. Add a Stunner or Second DPS.</strong> For hyper carry teams, a Stunner builds Daze to create Chain Attack windows. For Disorder teams, add a second Anomaly agent of a different element.</p>
+      <p><strong>3. Add a Support or Flex.</strong> Supports buff damage, heal, or provide shields. Defense agents offer survivability for difficult content. Pick what your team lacks.</p>
+      <p><strong>4. Match elements when possible.</strong> Mono-element teams benefit from shared buffs and debuffs. However, a mixed-element team with synergy beats a mono team without it.</p>
+      <p><strong>5. Use the Build Planner.</strong> Once you've picked your team, use the <a href="/build-planner/">interactive Build Planner</a> to equip W-Engines and Drive Discs for each agent.</p>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section id="faq">
+    <div class="bt-sec">
+      <h2>❓ Team Building FAQ</h2>
+      <div class="bt-faq-grid">
+        <div class="bt-faq-item">
+          <div class="bt-fq">Do I need all S-Rank agents for good teams?</div>
+          <div class="bt-fa"><strong>No.</strong> A-Rank agents at max refinement (R5 W-Engine, C6 Mindscape) can match or exceed base S-Rank performance. The Pyrois + Norma + Nicole F2P team clears all story and most endgame content. S-Ranks give you more options but aren't required.</div>
+        </div>
+        <div class="bt-faq-item">
+          <div class="bt-fq">Should I build mono-element teams?</div>
+          <div class="bt-fa">Mono-element teams are strong when fighting enemies weak to that element. However, Shiyu Defense often features enemies with different weaknesses on each side, so having <strong>two teams with different elements</strong> is more important than mono-element synergy.</div>
+        </div>
+        <div class="bt-faq-item">
+          <div class="bt-fq">How important is team synergy vs individual strength?</div>
+          <div class="bt-fa"><strong>Synergy > individual strength.</strong> Three S-Rank agents with no synergy will underperform a well-synergized team with A-Ranks. Buff stacking, elemental reactions, and role balance matter more than raw stats.</div>
+        </div>
+        <div class="bt-faq-item">
+          <div class="bt-fq">What's the best Bangboo for my team?</div>
+          <div class="bt-fa">Match your Bangboo's element to your main DPS. <a href="/bangboo/luckyboo/">Luckyboo</a> (Physical) and <a href="/bangboo/electroboo/">Electroboo</a> (Electric) are versatile picks. Check our <a href="/bangboo/">Bangboo database</a> for elemental match recommendations.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="bt-sec bt-cta">
+    <h2 style="justify-content:center">🛠️ Ready to Build Your Team?</h2>
+    <p style="margin-bottom:18px;text-align:center">Use the interactive build planner to equip W-Engines, Drive Discs, and preview final stats for every agent.</p>
+    <div style="text-align:center">
+      <a href="/build-planner/" class="bt-btn">Open Build Planner →</a>
+      <a href="/tier-list/" class="bt-btn" style="margin-left:12px;background:rgba(249,211,102,0.15);border:1px solid #F9D366">View Tier List →</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Database</h4>
+        <ul>
+          <li><a href="/agents/">Agents</a></li>
+          <li><a href="/w-engines/">W-Engines</a></li>
+          <li><a href="/drive-discs/">Drive Discs</a></li>
+          <li><a href="/bangboo/">Bangboo</a></li>
+          <li><a href="/tier-list/">Tier List</a></li>
+          <li><a href="/best-teams/">Best Teams</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides &amp; Tools</h4>
+        <ul>
+          <li><a href="/guides/">Beginner's Guide</a></li>
+          <li><a href="/guides/gacha.html">Gacha &amp; Pity Guide</a></li>
+          <li><a href="/build-planner/">Build Planner</a></li>
+          <li><a href="/codes/">Redeem Codes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ZZZ Database. Not affiliated with HoYoverse.</p>
+      <p style="font-size:11px;color:var(--text3);margin-top:4px">Data sourced from community wikis. Game assets &copy; HoYoverse.</p>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('hb').addEventListener('click',function(){document.getElementById('nl').classList.toggle('open')});</script>
+</body>
+</html>

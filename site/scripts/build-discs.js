@@ -131,6 +131,15 @@ function buildPage(disc, idx) {
 <meta name=description content="${esc(disc.n)} — ${disc.type} Drive Disc Set. 2-Piece: ${esc(disc.p2)}. 4-Piece: ${esc(disc.p4)}">
 <meta name=robots content=index,follow>
 <link rel=canonical href=https://zzless.com/drive-discs/${disc.s}/>
+<meta property="og:title" content="${esc(disc.n)} — Drive Disc Set | ZZZ Database">
+<meta property="og:description" content="${esc(disc.n)} — ${disc.type} Drive Disc. 2-Pc: ${esc(disc.p2)}. 4-Pc: ${esc(disc.p4)}">
+<meta property="og:image" content="https://zzless.com/images/drive-discs/${disc.s}.png">
+<meta property="og:url" content="https://zzless.com/drive-discs/${disc.s}/">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(disc.n)} — Drive Disc | ZZZ Database">
+<meta name="twitter:description" content="${esc(disc.n)} — ${disc.type} Drive Disc. 2-Pc: ${esc(disc.p2)}">
+<meta name="twitter:image" content="https://zzless.com/images/drive-discs/${disc.s}.png">
 <link rel=stylesheet href=/shared.css>
 <style>
 .dd-d-top{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:24px;align-items:center}
@@ -183,16 +192,9 @@ function buildPage(disc, idx) {
   .dd-bottom-bar .dd-bb-select{font-size:13px;padding:6px 8px}
 }
 </style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"WebPage",
-  "name":"${esc(disc.n)} — Drive Disc Set",
-  "description":"${esc(disc.n)} — ${disc.type} Drive Disc Set. 2-Piece: ${esc(disc.p2)}. 4-Piece: ${esc(disc.p4)}",
-  "url":"https://zzless.com/drive-discs/${disc.s}/",
-  "isPartOf":{"@type":"WebSite","name":"ZZZ Database","url":"https://zzless.com"}
-}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://zzless.com/drive-discs/${disc.s}/#webpage","name":"${esc(disc.n)} — Drive Disc Set","description":"${esc(disc.n)} — ${disc.type} Drive Disc Set. 2-Piece: ${esc(disc.p2)}. 4-Piece: ${esc(disc.p4)}","url":"https://zzless.com/drive-discs/${disc.s}/","isPartOf":{"@type":"WebSite","name":"ZZZ Database","url":"https://zzless.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://zzless.com/"},{"@type":"ListItem","position":2,"name":"Drive Discs","item":"https://zzless.com/drive-discs/"},{"@type":"ListItem","position":3,"name":"${esc(disc.n)}"}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1ESN49R4Q4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-1ESN49R4Q4');</script>
 <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "xl629udfvo");</script>
 </head>
 <body>
@@ -203,6 +205,7 @@ function buildPage(disc, idx) {
 <div class=nav-right>
 <ul class=nav-links id=nl>
 <li><a href=/tier-list/>Tier List</a></li>
+<li><a href=/best-teams/>Best Teams</a></li>
 <li><a href=/agents/>Agents</a></li>
 <li><a href=/w-engines/>W-Engines</a></li>
 <li><a href=/drive-discs/>Drive Discs</a></li>
@@ -211,7 +214,6 @@ function buildPage(disc, idx) {
 <li><a href=/codes/>Codes</a></li>
 <li><a href=/items/>Items</a></li>
 </ul>
-<button class=theme-toggle>EN ▾</button>
 </div>
 </div>
 </nav>
