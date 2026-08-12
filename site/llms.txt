@@ -1,0 +1,80 @@
+# ZZZ Database (zzless.com) — LLM Content Index
+# Zenless Zone Zero fan wiki: agents, W-Engines, drive discs, tier list, builds, guides.
+
+## Site Info
+> ZZZ Database is a comprehensive Zenless Zone Zero fan wiki covering 44 agents, 46 W-Engines, 26 Drive Disc sets, 39 Bangboo companions, tier list rankings, best team compositions, an interactive build planner, redemption codes, and game mechanic guides.
+
+## Core Pages
+- Home: https://zzless.com/
+- Tier List: https://zzless.com/tier-list/
+- Best Teams: https://zzless.com/best-teams/
+- Build Planner: https://zzless.com/build-planner/
+- Codes (redemption & top-up): https://zzless.com/codes/
+- Items (all materials): https://zzless.com/items/
+
+## Agents (44 total)
+- All Agents: https://zzless.com/agents/
+- Alice: https://zzless.com/agents/alice/
+- Anby Demara: https://zzless.com/agents/anby-demara/
+- Anton: https://zzless.com/agents/anton/
+- Aria: https://zzless.com/agents/aria/
+- Astra Yao: https://zzless.com/agents/astra-yao/
+- Ben Bigger: https://zzless.com/agents/ben-bigger/
+- Billy Kid: https://zzless.com/agents/billy-kid/
+- Burnice: https://zzless.com/agents/burnice/
+- Caesar King: https://zzless.com/agents/caesar-king/
+- Cissia: https://zzless.com/agents/cissia/
+- Corin: https://zzless.com/agents/corin/
+- Ellen Joe: https://zzless.com/agents/ellen-joe/
+- Evelyn: https://zzless.com/agents/evelyn/
+- Grace: https://zzless.com/agents/grace/
+- Harumasa: https://zzless.com/agents/harumasa/
+- Hugo Vlad: https://zzless.com/agents/hugo-vlad/
+- Jane Doe: https://zzless.com/agents/jane-doe/
+- Ju Fufu: https://zzless.com/agents/ju-fufu/
+- Koleda: https://zzless.com/agents/koleda/
+- Lighter: https://zzless.com/agents/lighter/
+- Lucy: https://zzless.com/agents/lucy/
+- Miyabi: https://zzless.com/agents/miyabi/
+- Nangong Yu: https://zzless.com/agents/nangong-yu/
+- Nekomata: https://zzless.com/agents/nekomata/
+- Nicole Demara: https://zzless.com/agents/nicole-demara/
+- Pan Yinhu: https://zzless.com/agents/pan-yinhu/
+- Piper: https://zzless.com/agents/piper/
+- Pulchra: https://zzless.com/agents/pulchra/
+- Qingyi: https://zzless.com/agents/qingyi/
+- Rina: https://zzless.com/agents/rina/
+- Seed: https://zzless.com/agents/seed/
+- Seth Lowell: https://zzless.com/agents/seth-lowell/
+- Soldier 0 Anby: https://zzless.com/agents/soldier-0-anby/
+- Soldier 11: https://zzless.com/agents/soldier-11/
+- Soukaku: https://zzless.com/agents/soukaku/
+- Sunna: https://zzless.com/agents/sunna/
+- Trigger: https://zzless.com/agents/trigger/
+- Vivian: https://zzless.com/agents/vivian/
+- Von Lycaon: https://zzless.com/agents/von-lycaon/
+- Yanagi: https://zzless.com/agents/yanagi/
+- Ye Shunguang: https://zzless.com/agents/ye-shunguang/
+- Yixuan: https://zzless.com/agents/yixuan/
+- Yuzuha: https://zzless.com/agents/yuzuha/
+- Zhu Yuan: https://zzless.com/agents/zhu-yuan/
+
+## W-Engines (46 total)
+- All W-Engines: https://zzless.com/w-engines/
+
+## Drive Discs (26 total)
+- All Drive Discs: https://zzless.com/drive-discs/
+
+## Bangboo (39 total)
+- All Bangboo: https://zzless.com/bangboo/
+
+## Guides
+- Gacha & Pity System: https://zzless.com/guides/gacha
+- Download & Install: https://zzless.com/guides/download
+- Time Investment: https://zzless.com/guides/time
+
+## Meta
+- Sitemap: https://zzless.com/sitemap.xml
+- Privacy: https://zzless.com/privacy
+- Terms: https://zzless.com/terms
+- Contact: https://zzless.com/contact
